@@ -16,8 +16,24 @@ import PostNew from './admin/pages/PostNew';
 import './icons/fontawesome';
 import PostEdit from './admin/pages/PostEdit';
 
+const ScrollToTopOnNavigate: React.FC = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+      if (!location.hash) {
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual';
+        }
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      }
+    }, [location.pathname, location.hash]);
+
+    return null;
+  };
+
 const BodyClassController = () => {
   const location = useLocation();
+
 
   useEffect(() => {
     const path = location.pathname;
@@ -58,6 +74,7 @@ const App = () => {
     <Router>
       <BodyClassController />
       <ScrollToHash />
+      <ScrollToTopOnNavigate />
       <Routes>
         {/* フロントページ（共通レイアウト） */}
         <Route element={<Layout />}>

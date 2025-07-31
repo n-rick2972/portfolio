@@ -1,3 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 92">
-  <path id="Icon_feather-circle" data-name="Icon feather-circle" d="M83,43A40,40,0,1,1,43,3,40,40,0,0,1,83,43Z" fill="none" stroke="#ff6f59" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"/>
+  <defs>
+    <style>
+      .c{
+        fill:none;
+        stroke:#ff6f59;
+        stroke-linecap:round;
+        stroke-linejoin:round;
+        stroke-width:12px;
+      }
+    </style>
+  </defs>
+  <path class="c" d="M86,46c0,22.09-17.91,40-40,40S6,68.09,6,46,23.91,6,46,6s40,17.91,40,40Z"/>
 </svg>
