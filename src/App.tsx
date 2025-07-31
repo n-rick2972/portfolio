@@ -1,8 +1,8 @@
 // src/App.tsx
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Service from './pages/Service';
-import { useEffect } from 'react';
 import About from './pages/About';
 import Works from './pages/Works';
 import Detail from './pages/Detail';
@@ -12,30 +12,33 @@ import AdminLayout from './components/AdminLayout';
 import Login from './admin/pages/Login';
 import PrivateRoute from './components/PrivateRoute';
 import PostNew from './admin/pages/PostNew';
-
-import './icons/fontawesome';
 import PostEdit from './admin/pages/PostEdit';
 
+import './icons/fontawesome';
+
+import usePageViews from './hooks/usePageViews';
+import CookieConsent from './components/CookieConsent';
+import { loadGtag } from './lib/analytics';
+
 const ScrollToTopOnNavigate: React.FC = () => {
-    const location = useLocation();
-
-    useEffect(() => {
-      if (!location.hash) {
-        if ('scrollRestoration' in history) {
-          history.scrollRestoration = 'manual';
-        }
-        window.scrollTo({ top: 0, behavior: 'auto' });
-      }
-    }, [location.pathname, location.hash]);
-
-    return null;
-  };
-
-const BodyClassController = () => {
   const location = useLocation();
 
+  React.useEffect(() => {
+    if (!location.hash) {
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  }, [location.pathname, location.hash]);
 
-  useEffect(() => {
+  return null;
+};
+
+const BodyClassController: React.FC = () => {
+  const location = useLocation();
+
+  React.useEffect(() => {
     const path = location.pathname;
     const pathClass = path === '/' ? 'home' : path.slice(1).replace('/', '-');
 
@@ -54,10 +57,10 @@ const BodyClassController = () => {
   return null;
 };
 
-const ScrollToHash = () => {
+const ScrollToHash: React.FC = () => {
   const location = useLocation();
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (location.hash) {
       const target = document.getElementById(location.hash.substring(1));
       if (target) {
@@ -69,25 +72,40 @@ const ScrollToHash = () => {
   return null;
 };
 
-const App = () => {
+const App: React.FC = () => {
+  usePageViews();
+
+  const handleAccept = () => {
+    loadGtag(); // 同意後に gtag を初回ロード
+    if ((window as any).gtag) {
+      (window as any).gtag('event', 'page_view', {
+        page_path: window.location.pathname + window.location.search,
+      });
+    }
+    console.log('accepted');
+  };
+
+  const handleReject = () => {
+    console.log('rejected');
+  };
+
   return (
     <Router>
       <BodyClassController />
       <ScrollToHash />
       <ScrollToTopOnNavigate />
+      <CookieConsent onAccept={handleAccept} onReject={handleReject} />
       <Routes>
-        {/* フロントページ（共通レイアウト） */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/service" element={<Service title="SERVICE" />} />
           <Route path="/about" element={<About title="ABOUT" />} />
-          <Route path="/works" element={<Works title="WORKS"/>} />
+          <Route path="/works" element={<Works title="WORKS" />} />
           <Route path="/works/:slug" element={<Detail />} />
         </Route>
 
         <Route path="/admin/login" element={<Login />} />
 
-        {/* 管理画面 */}
         <Route
           element={
             <PrivateRoute>
@@ -102,6 +120,6 @@ const App = () => {
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
