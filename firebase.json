@@ -18,8 +18,13 @@
       {
         "source": "**",
         "destination": "/index.html"
+      },
+      {
+        "source": "/sitemap.xml",
+        "function": "sitemap"
       }
-    ]
+    ],
+    "cleanUrls": true
   },
   "functions": [
     {
