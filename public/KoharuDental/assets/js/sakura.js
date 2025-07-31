@@ -1,5 +1,5 @@
 // 桜の画像ファイルのパス
-const sakuraImages = ["./assets/img/sakura1.png", "./assets/img/sakura2.png"];
+const sakuraImages = ["./KoharuDental/assets/img/sakura1.png", "./KoharuDental/assets/img/sakura2.png"];
 
 // 桜の舞い演出
 function createSakura() {
