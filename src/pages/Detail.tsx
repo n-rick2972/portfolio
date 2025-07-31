@@ -46,7 +46,7 @@ const WorkDetail: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>{`${work.title} | Azur Web Design`}</title>
+        <title>{`${work.title} - Works | Azur Web Design`}</title>
         <meta name="description" content={description} />
       </Helmet>
 
