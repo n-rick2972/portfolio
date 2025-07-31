@@ -16,7 +16,7 @@ import PostEdit from './admin/pages/PostEdit';
 
 import './icons/fontawesome';
 
-import usePageViews from './hooks/usePageViews';
+import usePageViews from './hooks/usePageViews'; // 正しいケースで
 import CookieConsent from './components/CookieConsent';
 import { loadGtag } from './lib/analytics';
 
@@ -72,11 +72,11 @@ const ScrollToHash: React.FC = () => {
   return null;
 };
 
-const App: React.FC = () => {
-  usePageViews();
+const InnerApp: React.FC = () => {
+  usePageViews(); // ← ここなら Router の内側なので safe
 
   const handleAccept = () => {
-    loadGtag(); // 同意後に gtag を初回ロード
+    loadGtag();
     if ((window as any).gtag) {
       (window as any).gtag('event', 'page_view', {
         page_path: window.location.pathname + window.location.search,
@@ -90,11 +90,12 @@ const App: React.FC = () => {
   };
 
   return (
-    <Router>
+    <>
       <BodyClassController />
       <ScrollToHash />
       <ScrollToTopOnNavigate />
       <CookieConsent onAccept={handleAccept} onReject={handleReject} />
+
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -118,8 +119,14 @@ const App: React.FC = () => {
           <Route path="/admin/post/edit/:slug" element={<PostEdit />} />
         </Route>
       </Routes>
-    </Router>
+    </>
   );
 };
+
+const App: React.FC = () => (
+  <Router>
+    <InnerApp />
+  </Router>
+);
 
 export default App;
