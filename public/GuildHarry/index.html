@@ -1,786 +1,605 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex,nofollow" />
-    <title>Guild Harry</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap");
-    </style>
-    <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/swiper.min.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  </head>
-  <body>
-    <header>
-      <div class="flex header-area">
-        <div id="js-hamburger" class="hamburger">
-          <div class="flex hamburger-bar">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <p id="js-change">MENU</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Guild Harry</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap");
+  </style>
+  <link rel="stylesheet" href="/assets/css/reset.css" />
+  <link rel="stylesheet" href="/assets/css/swiper.min.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <header>
+    <div class="flex header-area">
+      <div id="js-hamburger" class="hamburger">
+        <div class="flex hamburger-bar">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <h1>
-          <img
-            src="./assets/img/logo_type.svg"
-            alt="Guild Harry - キルド ハリー"
-            class="sp header-logo"
-          />
-        </h1>
-        <div class="header-online-btn">
-          <a href="/">ONLINE<span> </span>SHOP</a>
+        <p id="js-change">MENU</p>
+      </div>
+      <h1>
+        <img src="./assets/img/logo_type.svg" alt="Guild Harry - キルド ハリー" class="sp header-logo" />
+      </h1>
+      <div class="header-online-btn">
+        <a href="/">ONLINE<span> </span>SHOP</a>
+      </div>
+    </div>
+    <div id="js-menu" class="menu">
+      <nav class="header-nav">
+        <ul>
+          <li><a href="./#feature">FEATURE</a></li>
+          <li><a href="./#lineUp">LINE UP</a></li>
+          <li><a href="./#newsJournal">NEWS & JOURNAL</a></li>
+          <li><a href="./#brands">OUR BRANDS</a></li>
+          <li><a href="./#recommend">RECOMMEND</a></li>
+          <li class="external"><a href="/">PRESS</a></li>
+          <li class="external"><a href="/">RECRUIT</a></li>
+        </ul>
+      </nav>
+      <div class="online-btn sp">
+        <a href="/">ONLINE SHOP</a>
+      </div>
+      <div class="sns-links">
+        <p>FOLLOW US !</p>
+        <div class="flex sns-items">
+          <a href="/">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M17.7165 0L2.21456 0C0.991015 0 0 0.975403 0 2.17967L0 17.4374C0 18.6416 0.991015 19.617 2.21456 19.617H10.6531V12.0307H8.05878V9.06089H10.6531V6.87577C10.6531 4.343 12.2266 2.96217 14.5231 2.96217C15.2971 2.95999 16.0699 2.99923 16.8395 3.07661V5.72491H15.2583C14.0071 5.72491 13.7635 6.30688 13.7635 7.16567V9.05653H16.7531L16.3645 12.0263H13.7458V19.617H17.7165C18.94 19.617 19.931 18.6416 19.931 17.4374V2.17967C19.931 0.975403 18.94 0 17.7165 0Z" />
+            </svg>
+          </a>
+          <a href="/">
+            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M6.3987 0C3.3415 0 0.862305 2.44014 0.862305 5.44918L0.862305 14.1679C0.862305 17.1769 3.3415 19.617 6.3987 19.617H15.2569C18.3141 19.617 20.7933 17.1769 20.7933 14.1679V5.44918C20.7933 2.44014 18.3141 0 15.2569 0L6.3987 0ZM17.4715 2.17967C18.0827 2.17967 18.5788 2.66792 18.5788 3.26951C18.5788 3.8711 18.0827 4.35934 17.4715 4.35934C16.8603 4.35934 16.3642 3.8711 16.3642 3.26951C16.3642 2.66792 16.8603 2.17967 17.4715 2.17967ZM10.8278 4.35934C13.885 4.35934 16.3642 6.79948 16.3642 9.80852C16.3642 12.8176 13.885 15.2577 10.8278 15.2577C7.77062 15.2577 5.29142 12.8176 5.29142 9.80852C5.29142 6.79948 7.77062 4.35934 10.8278 4.35934ZM10.8278 6.53901C9.94681 6.53901 9.10189 6.88348 8.47893 7.49663C7.85596 8.10978 7.50598 8.94139 7.50598 9.80852C7.50598 10.6756 7.85596 11.5073 8.47893 12.1204C9.10189 12.7336 9.94681 13.078 10.8278 13.078C11.7088 13.078 12.5538 12.7336 13.1767 12.1204C13.7997 11.5073 14.1497 10.6756 14.1497 9.80852C14.1497 8.94139 13.7997 8.10978 13.1767 7.49663C12.5538 6.88348 11.7088 6.53901 10.8278 6.53901Z" />
+            </svg>
+          </a>
+          <a href="/">
+            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.6749 0L2.7044 0C1.69299 0 0.724121 0.953606 0.724121 1.94909L0.724121 17.668C0.724121 18.6634 1.69299 19.617 2.7044 19.617H18.6749C19.6863 19.617 20.6552 18.6634 20.6552 17.668V1.94909C20.6552 0.953606 19.6863 0 18.6749 0ZM16.0536 7.10382C16.061 7.21907 16.061 7.33923 16.061 7.45693C16.061 11.0567 13.2757 15.2032 8.1858 15.2032C6.61623 15.2032 5.16127 14.7545 3.93551 13.982C4.15973 14.0066 4.37399 14.0164 4.6032 14.0164C5.89872 14.0164 7.08959 13.5848 8.03881 12.8541C6.82302 12.8295 5.80155 12.0449 5.45276 10.9659C5.87878 11.0272 6.26246 11.0272 6.70094 10.9169C6.07492 10.7917 5.51224 10.4571 5.10849 9.96983C4.70474 9.48259 4.48482 8.8728 4.4861 8.24406V8.20973C4.85234 8.41326 5.28334 8.53832 5.73428 8.55548C5.3552 8.30682 5.04432 7.96994 4.82919 7.5747C4.61407 7.17947 4.50136 6.73809 4.50105 6.28971C4.50105 5.78212 4.63559 5.31867 4.87725 4.91652C5.5721 5.75843 6.43917 6.447 7.42211 6.93748C8.40504 7.42797 9.48184 7.70938 10.5825 7.76344C10.1914 5.91209 11.5965 4.41383 13.2857 4.41383C14.0829 4.41383 14.8004 4.74242 15.3062 5.27208C15.9315 5.15683 16.5294 4.92633 17.0626 4.61736C16.8558 5.24756 16.4223 5.77967 15.8468 6.11561C16.4049 6.05676 16.943 5.90473 17.4413 5.69139C17.0651 6.23577 16.5942 6.71884 16.0536 7.10382Z" />
+            </svg>
+          </a>
+          <a href="/">
+            <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.3894 4.19098C20.3894 2.46688 19.1007 1.07993 17.5084 1.07993C15.3515 0.980696 13.1518 0.942383 10.9038 0.942383H10.203C7.96052 0.942383 5.75693 0.980696 3.60005 1.08031C2.0116 1.08031 0.722927 2.47492 0.722927 4.19903C0.625595 5.56261 0.584327 6.92657 0.586663 8.29053C0.582769 9.65449 0.626893 11.0197 0.719034 12.3862C0.719034 14.1103 2.00771 15.5088 3.59616 15.5088C5.86204 15.6122 8.18633 15.6582 10.5495 15.6544C12.9167 15.662 15.2344 15.6135 17.5029 15.5088C19.0953 15.5088 20.3839 14.1103 20.3839 12.3862C20.4774 11.0184 20.5202 9.65449 20.5163 8.2867C20.5251 6.92274 20.4828 5.5575 20.3894 4.19098ZM8.64573 12.0491V4.52048L14.291 8.28286L8.64573 12.0491Z" />
+            </svg>
+          </a>
         </div>
       </div>
-      <div id="js-menu" class="menu">
-        <nav class="header-nav">
-          <ul>
+    </div>
+  </header>
+  <main>
+    <section class="mv">
+      <img class="pc" src="./assets/img/logo_type.svg" alt="Guild Harry - キルド ハリー" />
+      <small>© Guild Harry Co. Ltd.,All Rights Reserved.</small>
+      <div class="swiper-area">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./assets/img/mv-img01.jpg" alt="チョコレートコーティングバームクーヘン" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/img/mv-img02.jpg" alt="レモンケーキ" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/img/mv-img03.jpg" alt="その他の焼き菓子" />
+            </div>
+          </div>
+        </div>
+        <!-- 前後の矢印 -->
+        <div class="swiper-button-prev mv-btn"></div>
+        <div class="swiper-button-next mv-btn"></div>
+      </div>
+    </section>
+    <section id="target" class="wrapper latest-news">
+      <div class="flex latest-news-wrapper">
+        <div class="flex latest-news-title">
+          <h2>NEWS</h2>
+          <a href="/" class="more-btn">ALL
+            <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z" />
+            </svg>
+          </a>
+        </div>
+        <div class="latest-news-contents">
+          <ul class="flex latest-news-list">
+            <li class="latest-news-item">
+              <figure>
+                <img src="./assets/img/news01.jpg" alt="シュガードーナツ発売" />
+              </figure>
+              <h3>シュガードーナツ販売開始</h3>
+              <p><time datetime="2023-4-19">2023/4/19</time></p>
+            </li>
+            <li class="latest-news-item">
+              <figure>
+                <img src="./assets/img/news02.jpg" alt="カフェ 新メニュー登場" />
+              </figure>
+              <h3>カフェ 新メニュー登場</h3>
+              <p><time datetime="2023-4-17">2023/4/17</time></p>
+            </li>
+            <li class="latest-news-item">
+              <figure>
+                <img src="./assets/img/news03.jpg" alt="2023 母の日コンペ開催" />
+              </figure>
+              <h3>2023 母の日コンペ開催</h3>
+              <p><time datetime="2023-4-15">2023/4/15</time></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="feature" class="feature">
+      <div class="wrapper feature-wrapper">
+        <h2>FEATURE</h2>
+        <h3>
+          みんなの笑顔のそばに、<span class="_br"></span>
+          ギルドハリーの洋菓子を。
+        </h3>
+        <p>
+          素材へのこだわりと本場仕込みのレシピを守りつつ、<br />
+          工夫をかさねた確かな技で、<br />
+          安心安全においしさを追求し続けています。
+        </p>
+        <a href="/" class="more-btn">MORE
+          <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z" />
+          </svg>
+        </a>
+      </div>
+    </section>
+    <section id="lineUp" class="lineUp">
+      <h2>LINE UP</h2>
+      <div class="flagship">
+        <h3>FLAGSHIP PRODUCT</h3>
+        <div class="lineUp-contents">
+          <ul class="lineUp-list">
+            <li class="lineUp-items">
+              <div class="lineUp-items__text-area yellow">
+                <h4>チョコレートコーティングバームクーヘン</h4>
+                <p>
+                  パリッとしたコーディングチョコレートの中には、ふわふわ、しっとりのバームクーヘン。<br />
+                  みんなでシェアできる大きなバームクーヘンは、パーティーへのおもたせやプレゼントにぴったり。<br />
+                  大切な家族や仲間と、一緒に味わう喜びを、ぜひ楽しんでください。
+                </p>
+                <a href="/" class="more-btn">DETAIL
+                  <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z" />
+                  </svg>
+                </a>
+              </div>
+              <figure>
+                <img src="./assets/img/Choco-Baum.jpg" alt="チョコレートコーティングバームクーヘン" />
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="other-lineUp">
+        <h3>OTHER PRODUCTS</h3>
+        <div class="lineUp-contents">
+          <ul class="flex lineUp-list">
+            <li class="lineUp-items">
+              <div class="lineUp-items__text-area green">
+                <h4>レモンケーキ</h4>
+                <p>
+                  フレッシュなレモンの香り豊かなレモンケーキ。<br />
+                  しっとりとしたケーキに、爽やかな酸味がアクセントのグラサージュを纏わせました。<br />
+                  可愛らしいサイズのケーキは、プチギフトやお菓子の差し入れにもぴったりです。
+                </p>
+                <a href="/" class="more-btn">DETAIL
+                  <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z" />
+                  </svg>
+                </a>
+              </div>
+              <figure>
+                <img src="./assets/img/Lemon-cake.jpg" alt="レモンケーキ" />
+              </figure>
+            </li>
+            <li class="lineUp-items">
+              <div class="lineUp-items__text-area purple">
+                <h4>その他洋菓子</h4>
+                <p>
+                  バターをたっぷりと使い風味豊かに仕上がったフィナンシェ、爽やかなレモンの香りが広がるマドレーヌ、ほろっとした食感と可愛いアイシングが楽しいクッキーなど、素材へのこだわりをそのままに、季節の焼き菓子を多数そろえております。
+                </p>
+                <a href="/" class="more-btn">ALL PRODUCTS
+                  <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z" />
+                  </svg>
+                </a>
+              </div>
+              <figure>
+                <img src="./assets/img/others.jpg" alt="その他洋菓子" />
+              </figure>
+              <div class="circle-text others">
+                <svg viewBox="0 0 100 100">
+                  <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+                  <text>
+                    <textPath xlink:href="#circle">
+                      GUILD HARRY GUILD HARRY GUILD HARRY GUILD HARRY
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="seasonal">
+        <h3>SEASONAL PRODUCT</h3>
+        <div class="seasonal-content">
+          <figure>
+            <img src="./assets/img/ValentineDay.jpg" alt="バレンタインデー商品" />
+          </figure>
+          <div class="flex seasonal-text">
+            <h4>VALENTINE's DAY</h4>
+            <p>
+              大切なあの人への贈り物に。<br />
+              ギルドハリーのバレンタインギフト
+            </p>
+            <a href="/" class="more-btn">MORE
+              <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="newsJournal" class="mews-journal">
+      <h2>NEWS<span class="_br"></span> & JOURNAL</h2>
+      <div class="news">
+        <div class="wrapper flex news-journal__title-area">
+          <h3>ショップ・<span class="sp_br"></span>イベント情報</h3>
+          <div class="flex swipe-item">
+            <!--  ページネーション  -->
+            <div class="swiper-pagination1"></div>
+            <!-- 前後の矢印 -->
+            <div class="swiper-button-prev1"></div>
+            <div class="swiper-button-next1"></div>
+          </div>
+        </div>
+        <div class="flex news-journal__content">
+          <a href="/" class="more-btn left">MORE
+            <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z" />
+            </svg>
+          </a>
+          <div class="swiper swiper-content1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <figure>
+                  <img src="./assets/img/Sugar-Donut.jpg" alt="news01" />
+                </figure>
+                <h4>シュガードーナツ販売開始</h4>
+                <p><time datetime="2023-04-19">2023/04/19</time></p>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <img src="./assets/img/Cafe-new01.jpg" alt="news02" />
+                </figure>
+                <h4>カフェ 新メニュー登場</h4>
+                <p><time datetime="2023-04-17">2023/04/17</time></p>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <img src="./assets/img/Cafe-time.jpg" alt="news03" />
+                </figure>
+                <h4>カフェ 営業時間のお知らせ</h4>
+                <p><time datetime="2023-04-15">2023/04/15</time></p>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <img src="./assets/img/cafe-new02.jpg" alt="news04" />
+                </figure>
+                <h4>カフェ 新メニュー登場</h4>
+                <p><time datetime="2023-03-28">2023/03/28</time></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="journal">
+        <div class="wrapper flex news-journal__title-area">
+          <h3>ギルドハリーの<span class="sp_br"></span>こと</h3>
+          <div class="flex swipe-item">
+            <!-- 前後の矢印 -->
+            <div class="swiper-button-prev2"></div>
+            <div class="swiper-button-next2"></div>
+            <!--  ページネーション  -->
+            <div class="swiper-pagination2"></div>
+          </div>
+        </div>
+        <div class="flex news-journal__content">
+          <a href="/" class="more-btn right">MORE
+            <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z" />
+            </svg>
+          </a>
+          <div class="swiper swiper-content2" dir="rtl">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <figure>
+                  <img src="./assets/img/About-news04.jpg" alt="news04" />
+                </figure>
+                <h4>2023 母の日コンペ開催</h4>
+                <p><time datetime="2023-04-04">2023/04/04</time></p>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <img src="./assets/img/About-news03.jpg" alt="news03" />
+                </figure>
+                <h4>
+                  ギルドハリー所属シェフがコンテストにて銅賞を獲得しました
+                </h4>
+                <p><time datetime="2023-03-31">2023/03/31</time></p>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <img src="./assets/img/About-news02.jpg" alt="news02" />
+                </figure>
+                <h4>ギルドハリーグランシェフが「食文化賞」を受賞</h4>
+                <p><time datetime="2021-12-02">2021/12/02</time></p>
+              </div>
+              <div class="swiper-slide">
+                <figure>
+                  <img src="./assets/img/About-news01.jpg" alt="news01" />
+                </figure>
+                <h4>ギルドハリー所属シェフがコンテストにて優勝しました</h4>
+                <p><time datetime="2019-03-22">2019/03/22</time></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="gallery" class="gallery">
+      <div class="flex gallery-wrapper">
+        <div class="flex gallery-list">
+          <div class="gallery-column col1">
+            <figure>
+              <img src="./assets/img/gallery-01.jpg" alt="gallery-photo" />
+            </figure>
+            <figure>
+              <img src="./assets/img/gallery-02.jpg" alt="gallery-photo" />
+            </figure>
+          </div>
+          <div class="gallery-column col1">
+            <figure class="row1">
+              <img src="./assets/img/gallery-03.jpg" alt="gallery-photo" />
+            </figure>
+            <figure>
+              <img src="./assets/img/gallery-04.jpg" alt="gallery-photo" />
+            </figure>
+          </div>
+          <div class="gallery-column col2">
+            <figure>
+              <img src="./assets/img/gallery-05.jpg" alt="gallery-photo" />
+            </figure>
+            <figure>
+              <img src="./assets/img/gallery-06.jpg" alt="gallery-photo" />
+            </figure>
+          </div>
+          <div class="gallery-column col1">
+            <figure>
+              <img src="./assets/img/gallery-07.jpg" alt="gallery-photo" />
+            </figure>
+            <figure class="row1">
+              <img src="./assets/img/gallery-08.jpg" alt="gallery-photo" />
+            </figure>
+          </div>
+          <div class="gallery-column col1">
+            <figure>
+              <img src="./assets/img/gallery-09.jpg" alt="gallery-photo" />
+            </figure>
+            <figure>
+              <img src="./assets/img/gallery-10.jpg" alt="gallery-photo" />
+            </figure>
+          </div>
+        </div>
+        <div class="flex gallery-list">
+          <div class="gallery-column col1">
+            <figure>
+              <img src="./assets/img/gallery-01.jpg" alt="gallery-photo" />
+            </figure>
+            <figure>
+              <img src="./assets/img/gallery-02.jpg" alt="gallery-photo" />
+            </figure>
+          </div>
+          <div class="gallery-column col1">
+            <figure class="row1">
+              <img src="./assets/img/gallery-03.jpg" alt="gallery-photo" />
+            </figure>
+            <figure>
+              <img src="./assets/img/gallery-04.jpg" alt="gallery-photo" />
+            </figure>
+          </div>
+          <div class="gallery-column col2">
+            <figure>
+              <img src="./assets/img/gallery-05.jpg" alt="gallery-photo" />
+            </figure>
+            <figure>
+              <img src="./assets/img/gallery-06.jpg" alt="gallery-photo" />
+            </figure>
+          </div>
+          <div class="gallery-column col1">
+            <figure>
+              <img src="./assets/img/gallery-07.jpg" alt="gallery-photo" />
+            </figure>
+            <figure class="row1">
+              <img src="./assets/img/gallery-08.jpg" alt="gallery-photo" />
+            </figure>
+          </div>
+          <div class="gallery-column col1">
+            <figure>
+              <img src="./assets/img/gallery-09.jpg" alt="gallery-photo" />
+            </figure>
+            <figure>
+              <img src="./assets/img/gallery-10.jpg" alt="gallery-photo" />
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="message">
+        <p>幸せな笑顔のそばに、</p>
+        <p>いつもギルドハリーの洋菓子たちがあることを願って。</p>
+      </div>
+    </section>
+    <section id="brands" class="brands">
+      <h2 class="brands-title">OUR BRANDS</h2>
+      <ul class="wrapper flex brands-list">
+        <li class="brands-item">
+          <img src="./assets/img/Brand-logo01.svg" alt="Brand logo01" />
+        </li>
+        <li class="brands-item">
+          <img src="./assets/img/Brand-logo02.svg" alt="Brand logo02" />
+        </li>
+        <li class="brands-item">
+          <img src="./assets/img/Brand-logo03.svg" alt="Brand logo03" />
+        </li>
+        <li class="brands-item">
+          <img src="./assets/img/Brand-logo04.svg" alt="Brand logo04" />
+        </li>
+        <li class="brands-item">
+          <img src="./assets/img/Brand-logo05.svg" alt="Brand logo05" />
+        </li>
+        <li class="brands-item">
+          <img src="./assets/img/Brand-logo06.svg" alt="Brand logo06" />
+        </li>
+      </ul>
+    </section>
+    <section id="recommend" class="recommend">
+      <h2 class="recommend-title">RECOMMEND</h2>
+      <ul class="wrapper flex recommend-list">
+        <li class="recommend-item">
+          <a href="/">
+            <img src="./assets/img/package-icon.svg" alt="package museum" />
+            <h3>PACKAGE MUSEUM</h3>
+            <p>
+              季節やイベントごとに登場する<br />
+              歴代パッケージをご紹介
+            </p>
+            <figure>
+              <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z" fill="white" />
+              </svg>
+            </figure>
+          </a>
+        </li>
+        <li class="recommend-item">
+          <a href="">
+            <img src="./assets/img/cart-icon.svg" alt="online store" />
+            <h3>ONLINE STORE</h3>
+            <p>
+              こだわりのお菓子をおうちでも<br />
+              お買い物はこちらから
+            </p>
+            <figure>
+              <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z" fill="white" />
+              </svg>
+            </figure>
+          </a>
+        </li>
+        <li class="recommend-item">
+          <a href="">
+            <img src="./assets/img/shop-icon.svg" alt="shop list" />
+            <h3>SHOP LIST</h3>
+            <p>
+              お気軽に店舗へお越しください<br />
+              ショップ一覧
+            </p>
+            <figure>
+              <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z" fill="white" />
+              </svg>
+            </figure>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <div class="wrapper footer-wrapper">
+      <div class="flex footer__logo-area">
+        <h2>
+          <img src="./assets/img/logo.svg" alt="Guild Harry - キルド ハリー" />
+        </h2>
+        <div class="online-btn">
+          <a href="/">ONLINE SHOP</a>
+        </div>
+      </div>
+      <div class="flex link-area">
+        <nav class="flex footer-nav">
+          <ul class="footer-nav-list">
             <li><a href="./#feature">FEATURE</a></li>
             <li><a href="./#lineUp">LINE UP</a></li>
             <li><a href="./#newsJournal">NEWS & JOURNAL</a></li>
             <li><a href="./#brands">OUR BRANDS</a></li>
             <li><a href="./#recommend">RECOMMEND</a></li>
-            <li class="external"><a href="/">PRESS</a></li>
-            <li class="external"><a href="/">RECRUIT</a></li>
+          </ul>
+          <ul class="footer-nav-list">
+            <li class="external">PRESS</li>
+            <li class="external">RECRUIT</li>
           </ul>
         </nav>
-        <div class="online-btn sp">
-          <a href="/">ONLINE SHOP</a>
-        </div>
         <div class="sns-links">
           <p>FOLLOW US !</p>
           <div class="flex sns-items">
             <a href="/">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M17.7165 0L2.21456 0C0.991015 0 0 0.975403 0 2.17967L0 17.4374C0 18.6416 0.991015 19.617 2.21456 19.617H10.6531V12.0307H8.05878V9.06089H10.6531V6.87577C10.6531 4.343 12.2266 2.96217 14.5231 2.96217C15.2971 2.95999 16.0699 2.99923 16.8395 3.07661V5.72491H15.2583C14.0071 5.72491 13.7635 6.30688 13.7635 7.16567V9.05653H16.7531L16.3645 12.0263H13.7458V19.617H17.7165C18.94 19.617 19.931 18.6416 19.931 17.4374V2.17967C19.931 0.975403 18.94 0 17.7165 0Z"
-                />
+                  d="M17.7165 0L2.21456 0C0.991015 0 0 0.975403 0 2.17967L0 17.4374C0 18.6416 0.991015 19.617 2.21456 19.617H10.6531V12.0307H8.05878V9.06089H10.6531V6.87577C10.6531 4.343 12.2266 2.96217 14.5231 2.96217C15.2971 2.95999 16.0699 2.99923 16.8395 3.07661V5.72491H15.2583C14.0071 5.72491 13.7635 6.30688 13.7635 7.16567V9.05653H16.7531L16.3645 12.0263H13.7458V19.617H17.7165C18.94 19.617 19.931 18.6416 19.931 17.4374V2.17967C19.931 0.975403 18.94 0 17.7165 0Z" />
               </svg>
             </a>
             <a href="/">
-              <svg
-                width="21"
-                height="20"
-                viewBox="0 0 21 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M6.3987 0C3.3415 0 0.862305 2.44014 0.862305 5.44918L0.862305 14.1679C0.862305 17.1769 3.3415 19.617 6.3987 19.617H15.2569C18.3141 19.617 20.7933 17.1769 20.7933 14.1679V5.44918C20.7933 2.44014 18.3141 0 15.2569 0L6.3987 0ZM17.4715 2.17967C18.0827 2.17967 18.5788 2.66792 18.5788 3.26951C18.5788 3.8711 18.0827 4.35934 17.4715 4.35934C16.8603 4.35934 16.3642 3.8711 16.3642 3.26951C16.3642 2.66792 16.8603 2.17967 17.4715 2.17967ZM10.8278 4.35934C13.885 4.35934 16.3642 6.79948 16.3642 9.80852C16.3642 12.8176 13.885 15.2577 10.8278 15.2577C7.77062 15.2577 5.29142 12.8176 5.29142 9.80852C5.29142 6.79948 7.77062 4.35934 10.8278 4.35934ZM10.8278 6.53901C9.94681 6.53901 9.10189 6.88348 8.47893 7.49663C7.85596 8.10978 7.50598 8.94139 7.50598 9.80852C7.50598 10.6756 7.85596 11.5073 8.47893 12.1204C9.10189 12.7336 9.94681 13.078 10.8278 13.078C11.7088 13.078 12.5538 12.7336 13.1767 12.1204C13.7997 11.5073 14.1497 10.6756 14.1497 9.80852C14.1497 8.94139 13.7997 8.10978 13.1767 7.49663C12.5538 6.88348 11.7088 6.53901 10.8278 6.53901Z"
-                />
+                  d="M6.3987 0C3.3415 0 0.862305 2.44014 0.862305 5.44918L0.862305 14.1679C0.862305 17.1769 3.3415 19.617 6.3987 19.617H15.2569C18.3141 19.617 20.7933 17.1769 20.7933 14.1679V5.44918C20.7933 2.44014 18.3141 0 15.2569 0L6.3987 0ZM17.4715 2.17967C18.0827 2.17967 18.5788 2.66792 18.5788 3.26951C18.5788 3.8711 18.0827 4.35934 17.4715 4.35934C16.8603 4.35934 16.3642 3.8711 16.3642 3.26951C16.3642 2.66792 16.8603 2.17967 17.4715 2.17967ZM10.8278 4.35934C13.885 4.35934 16.3642 6.79948 16.3642 9.80852C16.3642 12.8176 13.885 15.2577 10.8278 15.2577C7.77062 15.2577 5.29142 12.8176 5.29142 9.80852C5.29142 6.79948 7.77062 4.35934 10.8278 4.35934ZM10.8278 6.53901C9.94681 6.53901 9.10189 6.88348 8.47893 7.49663C7.85596 8.10978 7.50598 8.94139 7.50598 9.80852C7.50598 10.6756 7.85596 11.5073 8.47893 12.1204C9.10189 12.7336 9.94681 13.078 10.8278 13.078C11.7088 13.078 12.5538 12.7336 13.1767 12.1204C13.7997 11.5073 14.1497 10.6756 14.1497 9.80852C14.1497 8.94139 13.7997 8.10978 13.1767 7.49663C12.5538 6.88348 11.7088 6.53901 10.8278 6.53901Z" />
               </svg>
             </a>
             <a href="/">
-              <svg
-                width="21"
-                height="20"
-                viewBox="0 0 21 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M18.6749 0L2.7044 0C1.69299 0 0.724121 0.953606 0.724121 1.94909L0.724121 17.668C0.724121 18.6634 1.69299 19.617 2.7044 19.617H18.6749C19.6863 19.617 20.6552 18.6634 20.6552 17.668V1.94909C20.6552 0.953606 19.6863 0 18.6749 0ZM16.0536 7.10382C16.061 7.21907 16.061 7.33923 16.061 7.45693C16.061 11.0567 13.2757 15.2032 8.1858 15.2032C6.61623 15.2032 5.16127 14.7545 3.93551 13.982C4.15973 14.0066 4.37399 14.0164 4.6032 14.0164C5.89872 14.0164 7.08959 13.5848 8.03881 12.8541C6.82302 12.8295 5.80155 12.0449 5.45276 10.9659C5.87878 11.0272 6.26246 11.0272 6.70094 10.9169C6.07492 10.7917 5.51224 10.4571 5.10849 9.96983C4.70474 9.48259 4.48482 8.8728 4.4861 8.24406V8.20973C4.85234 8.41326 5.28334 8.53832 5.73428 8.55548C5.3552 8.30682 5.04432 7.96994 4.82919 7.5747C4.61407 7.17947 4.50136 6.73809 4.50105 6.28971C4.50105 5.78212 4.63559 5.31867 4.87725 4.91652C5.5721 5.75843 6.43917 6.447 7.42211 6.93748C8.40504 7.42797 9.48184 7.70938 10.5825 7.76344C10.1914 5.91209 11.5965 4.41383 13.2857 4.41383C14.0829 4.41383 14.8004 4.74242 15.3062 5.27208C15.9315 5.15683 16.5294 4.92633 17.0626 4.61736C16.8558 5.24756 16.4223 5.77967 15.8468 6.11561C16.4049 6.05676 16.943 5.90473 17.4413 5.69139C17.0651 6.23577 16.5942 6.71884 16.0536 7.10382Z"
-                />
+                  d="M18.6749 0L2.7044 0C1.69299 0 0.724121 0.953606 0.724121 1.94909L0.724121 17.668C0.724121 18.6634 1.69299 19.617 2.7044 19.617H18.6749C19.6863 19.617 20.6552 18.6634 20.6552 17.668V1.94909C20.6552 0.953606 19.6863 0 18.6749 0ZM16.0536 7.10382C16.061 7.21907 16.061 7.33923 16.061 7.45693C16.061 11.0567 13.2757 15.2032 8.1858 15.2032C6.61623 15.2032 5.16127 14.7545 3.93551 13.982C4.15973 14.0066 4.37399 14.0164 4.6032 14.0164C5.89872 14.0164 7.08959 13.5848 8.03881 12.8541C6.82302 12.8295 5.80155 12.0449 5.45276 10.9659C5.87878 11.0272 6.26246 11.0272 6.70094 10.9169C6.07492 10.7917 5.51224 10.4571 5.10849 9.96983C4.70474 9.48259 4.48482 8.8728 4.4861 8.24406V8.20973C4.85234 8.41326 5.28334 8.53832 5.73428 8.55548C5.3552 8.30682 5.04432 7.96994 4.82919 7.5747C4.61407 7.17947 4.50136 6.73809 4.50105 6.28971C4.50105 5.78212 4.63559 5.31867 4.87725 4.91652C5.5721 5.75843 6.43917 6.447 7.42211 6.93748C8.40504 7.42797 9.48184 7.70938 10.5825 7.76344C10.1914 5.91209 11.5965 4.41383 13.2857 4.41383C14.0829 4.41383 14.8004 4.74242 15.3062 5.27208C15.9315 5.15683 16.5294 4.92633 17.0626 4.61736C16.8558 5.24756 16.4223 5.77967 15.8468 6.11561C16.4049 6.05676 16.943 5.90473 17.4413 5.69139C17.0651 6.23577 16.5942 6.71884 16.0536 7.10382Z" />
               </svg>
             </a>
             <a href="/">
-              <svg
-                width="21"
-                height="16"
-                viewBox="0 0 21 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M20.3894 4.19098C20.3894 2.46688 19.1007 1.07993 17.5084 1.07993C15.3515 0.980696 13.1518 0.942383 10.9038 0.942383H10.203C7.96052 0.942383 5.75693 0.980696 3.60005 1.08031C2.0116 1.08031 0.722927 2.47492 0.722927 4.19903C0.625595 5.56261 0.584327 6.92657 0.586663 8.29053C0.582769 9.65449 0.626893 11.0197 0.719034 12.3862C0.719034 14.1103 2.00771 15.5088 3.59616 15.5088C5.86204 15.6122 8.18633 15.6582 10.5495 15.6544C12.9167 15.662 15.2344 15.6135 17.5029 15.5088C19.0953 15.5088 20.3839 14.1103 20.3839 12.3862C20.4774 11.0184 20.5202 9.65449 20.5163 8.2867C20.5251 6.92274 20.4828 5.5575 20.3894 4.19098ZM8.64573 12.0491V4.52048L14.291 8.28286L8.64573 12.0491Z"
-                />
+                  d="M20.3894 4.19098C20.3894 2.46688 19.1007 1.07993 17.5084 1.07993C15.3515 0.980696 13.1518 0.942383 10.9038 0.942383H10.203C7.96052 0.942383 5.75693 0.980696 3.60005 1.08031C2.0116 1.08031 0.722927 2.47492 0.722927 4.19903C0.625595 5.56261 0.584327 6.92657 0.586663 8.29053C0.582769 9.65449 0.626893 11.0197 0.719034 12.3862C0.719034 14.1103 2.00771 15.5088 3.59616 15.5088C5.86204 15.6122 8.18633 15.6582 10.5495 15.6544C12.9167 15.662 15.2344 15.6135 17.5029 15.5088C19.0953 15.5088 20.3839 14.1103 20.3839 12.3862C20.4774 11.0184 20.5202 9.65449 20.5163 8.2867C20.5251 6.92274 20.4828 5.5575 20.3894 4.19098ZM8.64573 12.0491V4.52048L14.291 8.28286L8.64573 12.0491Z" />
               </svg>
             </a>
           </div>
         </div>
       </div>
-    </header>
-    <main>
-      <section class="mv">
-        <img
-          class="pc"
-          src="./assets/img/logo_type.svg"
-          alt="Guild Harry - キルド ハリー"
-        />
-        <small>© Guild Harry Co. Ltd.,All Rights Reserved.</small>
-        <div class="swiper-area">
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="./assets/img/mv-img01.jpg"
-                  alt="チョコレートコーティングバームクーヘン"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/img/mv-img02.jpg" alt="レモンケーキ" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./assets/img/mv-img03.jpg" alt="その他の焼き菓子" />
-              </div>
-            </div>
-          </div>
-          <!-- 前後の矢印 -->
-          <div class="swiper-button-prev mv-btn"></div>
-          <div class="swiper-button-next mv-btn"></div>
-        </div>
-      </section>
-      <section id="target" class="wrapper latest-news">
-        <div class="flex latest-news-wrapper">
-          <div class="flex latest-news-title">
-            <h2>NEWS</h2>
-            <a href="/" class="more-btn"
-              >ALL
-              <svg
-                width="25"
-                height="6"
-                viewBox="0 0 25 6"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z"
-                />
-              </svg>
-            </a>
-          </div>
-          <div class="latest-news-contents">
-            <ul class="flex latest-news-list">
-              <li class="latest-news-item">
-                <figure>
-                  <img
-                    src="./assets/img/news01.jpg"
-                    alt="シュガードーナツ発売"
-                  />
-                </figure>
-                <h3>シュガードーナツ販売開始</h3>
-                <p><time datetime="2023-4-19">2023/4/19</time></p>
-              </li>
-              <li class="latest-news-item">
-                <figure>
-                  <img
-                    src="./assets/img/news02.jpg"
-                    alt="カフェ 新メニュー登場"
-                  />
-                </figure>
-                <h3>カフェ 新メニュー登場</h3>
-                <p><time datetime="2023-4-17">2023/4/17</time></p>
-              </li>
-              <li class="latest-news-item">
-                <figure>
-                  <img
-                    src="./assets/img/news03.jpg"
-                    alt="2023 母の日コンペ開催"
-                  />
-                </figure>
-                <h3>2023 母の日コンペ開催</h3>
-                <p><time datetime="2023-4-15">2023/4/15</time></p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section id="feature" class="feature">
-        <div class="wrapper feature-wrapper">
-          <h2>FEATURE</h2>
-          <h3>
-            みんなの笑顔のそばに、<span class="_br"></span>
-            ギルドハリーの洋菓子を。
-          </h3>
-          <p>
-            素材へのこだわりと本場仕込みのレシピを守りつつ、<br />
-            工夫をかさねた確かな技で、<br />
-            安心安全においしさを追求し続けています。
-          </p>
-          <a href="/" class="more-btn"
-            >MORE
-            <svg
-              width="25"
-              height="6"
-              viewBox="0 0 25 6"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z"
-              />
-            </svg>
-          </a>
-        </div>
-      </section>
-      <section id="lineUp" class="lineUp">
-        <h2>LINE UP</h2>
-        <div class="flagship">
-          <h3>FLAGSHIP PRODUCT</h3>
-          <div class="lineUp-contents">
-            <ul class="lineUp-list">
-              <li class="lineUp-items">
-                <div class="lineUp-items__text-area yellow">
-                  <h4>チョコレートコーティングバームクーヘン</h4>
-                  <p>
-                    パリッとしたコーディングチョコレートの中には、ふわふわ、しっとりのバームクーヘン。<br />
-                    みんなでシェアできる大きなバームクーヘンは、パーティーへのおもたせやプレゼントにぴったり。<br />
-                    大切な家族や仲間と、一緒に味わう喜びを、ぜひ楽しんでください。
-                  </p>
-                  <a href="/" class="more-btn"
-                    >DETAIL
-                    <svg
-                      width="25"
-                      height="6"
-                      viewBox="0 0 25 6"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z"
-                      />
-                    </svg>
-                  </a>
-                </div>
-                <figure>
-                  <img
-                    src="./assets/img/Choco-Baum.jpg"
-                    alt="チョコレートコーティングバームクーヘン"
-                  />
-                </figure>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="other-lineUp">
-          <h3>OTHER PRODUCTS</h3>
-          <div class="lineUp-contents">
-            <ul class="flex lineUp-list">
-              <li class="lineUp-items">
-                <div class="lineUp-items__text-area green">
-                  <h4>レモンケーキ</h4>
-                  <p>
-                    フレッシュなレモンの香り豊かなレモンケーキ。<br />
-                    しっとりとしたケーキに、爽やかな酸味がアクセントのグラサージュを纏わせました。<br />
-                    可愛らしいサイズのケーキは、プチギフトやお菓子の差し入れにもぴったりです。
-                  </p>
-                  <a href="/" class="more-btn"
-                    >DETAIL
-                    <svg
-                      width="25"
-                      height="6"
-                      viewBox="0 0 25 6"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z"
-                      />
-                    </svg>
-                  </a>
-                </div>
-                <figure>
-                  <img src="./assets/img/Lemon-cake.jpg" alt="レモンケーキ" />
-                </figure>
-              </li>
-              <li class="lineUp-items">
-                <div class="lineUp-items__text-area purple">
-                  <h4>その他洋菓子</h4>
-                  <p>
-                    バターをたっぷりと使い風味豊かに仕上がったフィナンシェ、爽やかなレモンの香りが広がるマドレーヌ、ほろっとした食感と可愛いアイシングが楽しいクッキーなど、素材へのこだわりをそのままに、季節の焼き菓子を多数そろえております。
-                  </p>
-                  <a href="/" class="more-btn"
-                    >ALL PRODUCTS
-                    <svg
-                      width="25"
-                      height="6"
-                      viewBox="0 0 25 6"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z"
-                      />
-                    </svg>
-                  </a>
-                </div>
-                <figure>
-                  <img src="./assets/img/others.jpg" alt="その他洋菓子" />
-                </figure>
-                <div class="circle-text others">
-                  <svg viewBox="0 0 100 100">
-                    <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
-                    <text>
-                      <textPath xlink:href="#circle">
-                        GUILD HARRY GUILD HARRY GUILD HARRY GUILD HARRY
-                      </textPath>
-                    </text>
-                  </svg>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="seasonal">
-          <h3>SEASONAL PRODUCT</h3>
-          <div class="seasonal-content">
-            <figure>
-              <img
-                src="./assets/img/ValentineDay.jpg"
-                alt="バレンタインデー商品"
-              />
-            </figure>
-            <div class="flex seasonal-text">
-              <h4>VALENTINE's DAY</h4>
-              <p>
-                大切なあの人への贈り物に。<br />
-                ギルドハリーのバレンタインギフト
-              </p>
-              <a href="/" class="more-btn"
-                >MORE
-                <svg
-                  width="25"
-                  height="6"
-                  viewBox="0 0 25 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="newsJournal" class="mews-journal">
-        <h2>NEWS<span class="_br"></span> & JOURNAL</h2>
-        <div class="news">
-          <div class="wrapper flex news-journal__title-area">
-            <h3>ショップ・<span class="sp_br"></span>イベント情報</h3>
-            <div class="flex swipe-item">
-              <!--  ページネーション  -->
-              <div class="swiper-pagination1"></div>
-              <!-- 前後の矢印 -->
-              <div class="swiper-button-prev1"></div>
-              <div class="swiper-button-next1"></div>
-            </div>
-          </div>
-          <div class="flex news-journal__content">
-            <a href="/" class="more-btn left"
-              >MORE
-              <svg
-                width="25"
-                height="6"
-                viewBox="0 0 25 6"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z"
-                />
-              </svg>
-            </a>
-            <div class="swiper swiper-content1">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="./assets/img/Sugar-Donut.jpg" alt="news01" />
-                  </figure>
-                  <h4>シュガードーナツ販売開始</h4>
-                  <p><time datetime="2023-04-19">2023/04/19</time></p>
-                </div>
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="./assets/img/Cafe-new01.jpg" alt="news02" />
-                  </figure>
-                  <h4>カフェ 新メニュー登場</h4>
-                  <p><time datetime="2023-04-17">2023/04/17</time></p>
-                </div>
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="./assets/img/Cafe-time.jpg" alt="news03" />
-                  </figure>
-                  <h4>カフェ 営業時間のお知らせ</h4>
-                  <p><time datetime="2023-04-15">2023/04/15</time></p>
-                </div>
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="./assets/img/cafe-new02.jpg" alt="news04" />
-                  </figure>
-                  <h4>カフェ 新メニュー登場</h4>
-                  <p><time datetime="2023-03-28">2023/03/28</time></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="journal">
-          <div class="wrapper flex news-journal__title-area">
-            <h3>ギルドハリーの<span class="sp_br"></span>こと</h3>
-            <div class="flex swipe-item">
-              <!-- 前後の矢印 -->
-              <div class="swiper-button-prev2"></div>
-              <div class="swiper-button-next2"></div>
-              <!--  ページネーション  -->
-              <div class="swiper-pagination2"></div>
-            </div>
-          </div>
-          <div class="flex news-journal__content">
-            <a href="/" class="more-btn right"
-              >MORE
-              <svg
-                width="25"
-                height="6"
-                viewBox="0 0 25 6"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z"
-                />
-              </svg>
-            </a>
-            <div class="swiper swiper-content2" dir="rtl">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="./assets/img/About-news04.jpg" alt="news04" />
-                  </figure>
-                  <h4>2023 母の日コンペ開催</h4>
-                  <p><time datetime="2023-04-04">2023/04/04</time></p>
-                </div>
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="./assets/img/About-news03.jpg" alt="news03" />
-                  </figure>
-                  <h4>
-                    ギルドハリー所属シェフがコンテストにて銅賞を獲得しました
-                  </h4>
-                  <p><time datetime="2023-03-31">2023/03/31</time></p>
-                </div>
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="./assets/img/About-news02.jpg" alt="news02" />
-                  </figure>
-                  <h4>ギルドハリーグランシェフが「食文化賞」を受賞</h4>
-                  <p><time datetime="2021-12-02">2021/12/02</time></p>
-                </div>
-                <div class="swiper-slide">
-                  <figure>
-                    <img src="./assets/img/About-news01.jpg" alt="news01" />
-                  </figure>
-                  <h4>ギルドハリー所属シェフがコンテストにて優勝しました</h4>
-                  <p><time datetime="2019-03-22">2019/03/22</time></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="gallery" class="gallery">
-        <div class="flex gallery-wrapper">
-          <div class="flex gallery-list">
-            <div class="gallery-column col1">
-              <figure>
-                <img src="./assets/img/gallery-01.jpg" alt="gallery-photo" />
-              </figure>
-              <figure>
-                <img src="./assets/img/gallery-02.jpg" alt="gallery-photo" />
-              </figure>
-            </div>
-            <div class="gallery-column col1">
-              <figure class="row1">
-                <img src="./assets/img/gallery-03.jpg" alt="gallery-photo" />
-              </figure>
-              <figure>
-                <img src="./assets/img/gallery-04.jpg" alt="gallery-photo" />
-              </figure>
-            </div>
-            <div class="gallery-column col2">
-              <figure>
-                <img src="./assets/img/gallery-05.jpg" alt="gallery-photo" />
-              </figure>
-              <figure>
-                <img src="./assets/img/gallery-06.jpg" alt="gallery-photo" />
-              </figure>
-            </div>
-            <div class="gallery-column col1">
-              <figure>
-                <img src="./assets/img/gallery-07.jpg" alt="gallery-photo" />
-              </figure>
-              <figure class="row1">
-                <img src="./assets/img/gallery-08.jpg" alt="gallery-photo" />
-              </figure>
-            </div>
-            <div class="gallery-column col1">
-              <figure>
-                <img src="./assets/img/gallery-09.jpg" alt="gallery-photo" />
-              </figure>
-              <figure>
-                <img src="./assets/img/gallery-10.jpg" alt="gallery-photo" />
-              </figure>
-            </div>
-          </div>
-          <div class="flex gallery-list">
-            <div class="gallery-column col1">
-              <figure>
-                <img src="./assets/img/gallery-01.jpg" alt="gallery-photo" />
-              </figure>
-              <figure>
-                <img src="./assets/img/gallery-02.jpg" alt="gallery-photo" />
-              </figure>
-            </div>
-            <div class="gallery-column col1">
-              <figure class="row1">
-                <img src="./assets/img/gallery-03.jpg" alt="gallery-photo" />
-              </figure>
-              <figure>
-                <img src="./assets/img/gallery-04.jpg" alt="gallery-photo" />
-              </figure>
-            </div>
-            <div class="gallery-column col2">
-              <figure>
-                <img src="./assets/img/gallery-05.jpg" alt="gallery-photo" />
-              </figure>
-              <figure>
-                <img src="./assets/img/gallery-06.jpg" alt="gallery-photo" />
-              </figure>
-            </div>
-            <div class="gallery-column col1">
-              <figure>
-                <img src="./assets/img/gallery-07.jpg" alt="gallery-photo" />
-              </figure>
-              <figure class="row1">
-                <img src="./assets/img/gallery-08.jpg" alt="gallery-photo" />
-              </figure>
-            </div>
-            <div class="gallery-column col1">
-              <figure>
-                <img src="./assets/img/gallery-09.jpg" alt="gallery-photo" />
-              </figure>
-              <figure>
-                <img src="./assets/img/gallery-10.jpg" alt="gallery-photo" />
-              </figure>
-            </div>
-          </div>
-        </div>
-        <div class="message">
-          <p>幸せな笑顔のそばに、</p>
-          <p>いつもギルドハリーの洋菓子たちがあることを願って。</p>
-        </div>
-      </section>
-      <section id="brands" class="brands">
-        <h2 class="brands-title">OUR BRANDS</h2>
-        <ul class="wrapper flex brands-list">
-          <li class="brands-item">
-            <img src="./assets/img/Brand-logo01.svg" alt="Brand logo01" />
-          </li>
-          <li class="brands-item">
-            <img src="./assets/img/Brand-logo02.svg" alt="Brand logo02" />
-          </li>
-          <li class="brands-item">
-            <img src="./assets/img/Brand-logo03.svg" alt="Brand logo03" />
-          </li>
-          <li class="brands-item">
-            <img src="./assets/img/Brand-logo04.svg" alt="Brand logo04" />
-          </li>
-          <li class="brands-item">
-            <img src="./assets/img/Brand-logo05.svg" alt="Brand logo05" />
-          </li>
-          <li class="brands-item">
-            <img src="./assets/img/Brand-logo06.svg" alt="Brand logo06" />
-          </li>
-        </ul>
-      </section>
-      <section id="recommend" class="recommend">
-        <h2 class="recommend-title">RECOMMEND</h2>
-        <ul class="wrapper flex recommend-list">
-          <li class="recommend-item">
-            <a href="/">
-              <img src="./assets/img/package-icon.svg" alt="package museum" />
-              <h3>PACKAGE MUSEUM</h3>
-              <p>
-                季節やイベントごとに登場する<br />
-                歴代パッケージをご紹介
-              </p>
-              <figure>
-                <svg
-                  width="25"
-                  height="6"
-                  viewBox="0 0 25 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z"
-                    fill="white"
-                  />
-                </svg>
-              </figure>
-            </a>
-          </li>
-          <li class="recommend-item">
-            <a href="">
-              <img src="./assets/img/cart-icon.svg" alt="online store" />
-              <h3>ONLINE STORE</h3>
-              <p>
-                こだわりのお菓子をおうちでも<br />
-                お買い物はこちらから
-              </p>
-              <figure>
-                <svg
-                  width="25"
-                  height="6"
-                  viewBox="0 0 25 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z"
-                    fill="white"
-                  />
-                </svg>
-              </figure>
-            </a>
-          </li>
-          <li class="recommend-item">
-            <a href="">
-              <img src="./assets/img/shop-icon.svg" alt="shop list" />
-              <h3>SHOP LIST</h3>
-              <p>
-                お気軽に店舗へお越しください<br />
-                ショップ一覧
-              </p>
-              <figure>
-                <svg
-                  width="25"
-                  height="6"
-                  viewBox="0 0 25 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 2.5H0.5V3.5H1V2.5ZM25 3L20 0.113249V5.88675L25 3ZM1 3.5H20.5V2.5H1V3.5Z"
-                    fill="white"
-                  />
-                </svg>
-              </figure>
-            </a>
-          </li>
-        </ul>
-      </section>
-    </main>
-    <footer>
-      <div class="wrapper footer-wrapper">
-        <div class="flex footer__logo-area">
-          <h2>
-            <img
-              src="./assets/img/logo.svg"
-              alt="Guild Harry - キルド ハリー"
-            />
-          </h2>
-          <div class="online-btn">
-            <a href="/">ONLINE SHOP</a>
-          </div>
-        </div>
-        <div class="flex link-area">
-          <nav class="flex footer-nav">
-            <ul class="footer-nav-list">
-              <li><a href="./#feature">FEATURE</a></li>
-              <li><a href="./#lineUp">LINE UP</a></li>
-              <li><a href="./#newsJournal">NEWS & JOURNAL</a></li>
-              <li><a href="./#brands">OUR BRANDS</a></li>
-              <li><a href="./#recommend">RECOMMEND</a></li>
-            </ul>
-            <ul class="footer-nav-list">
-              <li class="external">PRESS</li>
-              <li class="external">RECRUIT</li>
-            </ul>
-          </nav>
-          <div class="sns-links">
-            <p>FOLLOW US !</p>
-            <div class="flex sns-items">
-              <a href="/">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17.7165 0L2.21456 0C0.991015 0 0 0.975403 0 2.17967L0 17.4374C0 18.6416 0.991015 19.617 2.21456 19.617H10.6531V12.0307H8.05878V9.06089H10.6531V6.87577C10.6531 4.343 12.2266 2.96217 14.5231 2.96217C15.2971 2.95999 16.0699 2.99923 16.8395 3.07661V5.72491H15.2583C14.0071 5.72491 13.7635 6.30688 13.7635 7.16567V9.05653H16.7531L16.3645 12.0263H13.7458V19.617H17.7165C18.94 19.617 19.931 18.6416 19.931 17.4374V2.17967C19.931 0.975403 18.94 0 17.7165 0Z"
-                  />
-                </svg>
-              </a>
-              <a href="/">
-                <svg
-                  width="21"
-                  height="20"
-                  viewBox="0 0 21 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.3987 0C3.3415 0 0.862305 2.44014 0.862305 5.44918L0.862305 14.1679C0.862305 17.1769 3.3415 19.617 6.3987 19.617H15.2569C18.3141 19.617 20.7933 17.1769 20.7933 14.1679V5.44918C20.7933 2.44014 18.3141 0 15.2569 0L6.3987 0ZM17.4715 2.17967C18.0827 2.17967 18.5788 2.66792 18.5788 3.26951C18.5788 3.8711 18.0827 4.35934 17.4715 4.35934C16.8603 4.35934 16.3642 3.8711 16.3642 3.26951C16.3642 2.66792 16.8603 2.17967 17.4715 2.17967ZM10.8278 4.35934C13.885 4.35934 16.3642 6.79948 16.3642 9.80852C16.3642 12.8176 13.885 15.2577 10.8278 15.2577C7.77062 15.2577 5.29142 12.8176 5.29142 9.80852C5.29142 6.79948 7.77062 4.35934 10.8278 4.35934ZM10.8278 6.53901C9.94681 6.53901 9.10189 6.88348 8.47893 7.49663C7.85596 8.10978 7.50598 8.94139 7.50598 9.80852C7.50598 10.6756 7.85596 11.5073 8.47893 12.1204C9.10189 12.7336 9.94681 13.078 10.8278 13.078C11.7088 13.078 12.5538 12.7336 13.1767 12.1204C13.7997 11.5073 14.1497 10.6756 14.1497 9.80852C14.1497 8.94139 13.7997 8.10978 13.1767 7.49663C12.5538 6.88348 11.7088 6.53901 10.8278 6.53901Z"
-                  />
-                </svg>
-              </a>
-              <a href="/">
-                <svg
-                  width="21"
-                  height="20"
-                  viewBox="0 0 21 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18.6749 0L2.7044 0C1.69299 0 0.724121 0.953606 0.724121 1.94909L0.724121 17.668C0.724121 18.6634 1.69299 19.617 2.7044 19.617H18.6749C19.6863 19.617 20.6552 18.6634 20.6552 17.668V1.94909C20.6552 0.953606 19.6863 0 18.6749 0ZM16.0536 7.10382C16.061 7.21907 16.061 7.33923 16.061 7.45693C16.061 11.0567 13.2757 15.2032 8.1858 15.2032C6.61623 15.2032 5.16127 14.7545 3.93551 13.982C4.15973 14.0066 4.37399 14.0164 4.6032 14.0164C5.89872 14.0164 7.08959 13.5848 8.03881 12.8541C6.82302 12.8295 5.80155 12.0449 5.45276 10.9659C5.87878 11.0272 6.26246 11.0272 6.70094 10.9169C6.07492 10.7917 5.51224 10.4571 5.10849 9.96983C4.70474 9.48259 4.48482 8.8728 4.4861 8.24406V8.20973C4.85234 8.41326 5.28334 8.53832 5.73428 8.55548C5.3552 8.30682 5.04432 7.96994 4.82919 7.5747C4.61407 7.17947 4.50136 6.73809 4.50105 6.28971C4.50105 5.78212 4.63559 5.31867 4.87725 4.91652C5.5721 5.75843 6.43917 6.447 7.42211 6.93748C8.40504 7.42797 9.48184 7.70938 10.5825 7.76344C10.1914 5.91209 11.5965 4.41383 13.2857 4.41383C14.0829 4.41383 14.8004 4.74242 15.3062 5.27208C15.9315 5.15683 16.5294 4.92633 17.0626 4.61736C16.8558 5.24756 16.4223 5.77967 15.8468 6.11561C16.4049 6.05676 16.943 5.90473 17.4413 5.69139C17.0651 6.23577 16.5942 6.71884 16.0536 7.10382Z"
-                  />
-                </svg>
-              </a>
-              <a href="/">
-                <svg
-                  width="21"
-                  height="16"
-                  viewBox="0 0 21 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20.3894 4.19098C20.3894 2.46688 19.1007 1.07993 17.5084 1.07993C15.3515 0.980696 13.1518 0.942383 10.9038 0.942383H10.203C7.96052 0.942383 5.75693 0.980696 3.60005 1.08031C2.0116 1.08031 0.722927 2.47492 0.722927 4.19903C0.625595 5.56261 0.584327 6.92657 0.586663 8.29053C0.582769 9.65449 0.626893 11.0197 0.719034 12.3862C0.719034 14.1103 2.00771 15.5088 3.59616 15.5088C5.86204 15.6122 8.18633 15.6582 10.5495 15.6544C12.9167 15.662 15.2344 15.6135 17.5029 15.5088C19.0953 15.5088 20.3839 14.1103 20.3839 12.3862C20.4774 11.0184 20.5202 9.65449 20.5163 8.2867C20.5251 6.92274 20.4828 5.5575 20.3894 4.19098ZM8.64573 12.0491V4.52048L14.291 8.28286L8.64573 12.0491Z"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="flex copy">
-          <p>© Guild Harry Co. Ltd.,All Rights Reserved.</p>
-          <a href="/">ハリーグループ</a>
-          <a href="/">プライバシーポリシー</a>
-        </div>
+      <div class="flex copy">
+        <p>© Guild Harry Co. Ltd.,All Rights Reserved.</p>
+        <a href="/">ハリーグループ</a>
+        <a href="/">プライバシーポリシー</a>
       </div>
-    </footer>
-    <div id="return-top" class="return-top">
-      <img src="./assets/img/Arrow-top.svg" alt="topへ戻る" />
-      <p>TOP</p>
     </div>
-    <script src="./assets/js/swiper-bundle.min.js"></script>
-    <script src="./assets/js/swiper-option.js"></script>
-    <script src="./assets/js/hamburger.js"></script>
-    <script src="./assets/js/returnTop.js"></script>
-    <script src="./assets/js/smooth-scroll.js"></script>
-  </body>
+  </footer>
+  <div id="return-top" class="return-top">
+    <img src="./assets/img/Arrow-top.svg" alt="topへ戻る" />
+    <p>TOP</p>
+  </div>
+  <script src="./assets/js/swiper-bundle.min.js"></script>
+  <script src="./assets/js/swiper-option.js"></script>
+  <script src="./assets/js/hamburger.js"></script>
+  <script src="./assets/js/returnTop.js"></script>
+  <script src="./assets/js/smooth-scroll.js"></script>
+</body>
+
 </html>
