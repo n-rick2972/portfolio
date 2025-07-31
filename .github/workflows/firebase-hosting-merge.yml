@@ -25,7 +25,18 @@ jobs:
 
       - name: Install & Build
         run: |
-          set -eux  # 実行内容を表示し、エラーで止める
+          set -eux
+
+          # production 用 env ファイルを生成（必要なら .env でも可）
+          cat <<EOF > .env.production
+          VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN=${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID=${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET=${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID=${{ secrets.VITE_FIREBASE_APP_ID }}
+          EOF
+
           npm ci --legacy-peer-deps
           npm run build
 
