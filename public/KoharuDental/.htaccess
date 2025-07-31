@@ -1,0 +1,6 @@
+Options -Indexes
+AuthUserFile /home/azur-web-design/www/.htpasswd
+AuthType Basic
+AuthName "Web access"
+Satisfy all
+Order deny,allow
