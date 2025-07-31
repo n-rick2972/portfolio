@@ -1,0 +1,277 @@
+/* service */
+.service {
+  background-image: url(/images/service_top-image.png);
+}
+
+.serviceContents {
+  margin-bottom: 120px;
+}
+
+.serviceListItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 50px;
+  padding: 5%;
+  background-color: #fafafa;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.serviceListItem:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.serviceListItem figure {
+  width: 10%;
+}
+
+.serviceListItem figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.serviceListItemText {
+  flex: 1;
+}
+
+.serviceListItemText h3 {
+  padding-bottom: 20px;
+  font-weight: 600;
+}
+
+.serviceListItemText p:last-of-type {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #0a122a;
+}
+
+.flow {
+  width: 100%;
+  padding: 80px 0 120px;
+  background-color: rgba(255, 255, 242, 0.6);
+}
+
+.flowTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 80px;
+  line-height: normal;
+}
+
+.flowTitle span {
+  display: inline-block;
+  width: 16px;
+  height: 1px;
+  background-color: #0a122a;
+}
+
+.flowList {
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.flowListItem {
+  display: grid;
+  grid-template-rows: 100px auto 1fr;
+  align-items: stretch;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  width: 30%;
+}
+
+.flowListItem figure {
+  width: 25%;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
+
+.flowListItem figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.flowListItem h3 {
+  text-align: center;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+}
+
+.arrow span {
+  display: block;
+  width: 10px;
+  height: 20px;
+  clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  background-color: #303136;
+}
+
+.noService {
+  margin-top: 120px;
+  padding: 80px 0;
+  border: 1px solid #0a122a;
+  position: relative;
+}
+
+.noServiceTitle {
+  width: max-content;
+  padding: 0 40px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fdfdf5;
+  font-size: 2.4rem;
+}
+
+.noServiceWrapper {
+  text-align: center;
+}
+
+.noServiceList {
+  margin: 0 auto;
+  align-items: stretch;
+  justify-content: space-evenly;
+}
+
+.noServiceListItem {
+  width: 30%;
+}
+
+.noServiceListItem figure {
+  text-align: center;
+  height: 90px;
+}
+
+.noServiceListItem figure img {
+  vertical-align: middle;
+}
+
+.noServiceListItem h5 {
+  padding: 10px 0;
+  font-size: 2rem;
+}
+
+.noServiceListItem p {
+  text-align: left;
+}
+
+.noServiceArrow {
+  display: block;
+  margin: 40px auto;
+}
+
+.countermeasure {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto;
+  font-size: 2.4rem;
+  z-index: 2;
+}
+
+.countermeasure::before {
+  content: url(/images/Ico_feather-circle.svg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+@media (max-width: 520px) {
+  .service {
+    background-image: url(/images/service_top-image_mobile.png);
+  }
+
+  .serviceContents {
+    margin-bottom: 80px;
+  }
+
+  .serviceListItem {
+    flex-direction: column;
+    gap: 30px;
+    min-width: auto;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+
+  .serviceListItem figure {
+    width: 100px;
+  }
+
+  .serviceListItem h3 {
+    text-align: center;
+  }
+
+  .flow {
+    padding: 80px 0;
+  }
+
+  .flowTitle {
+    margin-bottom: 30px;
+  }
+
+  .flowList {
+    display: block;
+  }
+
+  .flowListItem {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .flowListItem:not(:last-child) {
+    margin: 0 auto;
+  }
+
+  .flowListItem:not(:last-child)::after {
+    top: auto;
+    right: auto;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 100%) rotate(135deg);
+  }
+
+  .arrow {
+    justify-content: center;
+  }
+
+  .arrow span {
+    transform: rotate(90deg) translate(50%, 50%);
+  }
+
+  .flowListItem figure {
+    width: 80px;
+  }
+
+  .noService {
+    margin-top: 80px;
+    padding: 50px 0;
+  }
+
+  .noServiceList {
+    display: block;
+  }
+
+  .noServiceListItem {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .noServiceListItem:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  .countermeasure {
+    width: 80%;
+    font-size: 1.8rem;
+  }
+}

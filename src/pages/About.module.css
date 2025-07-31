@@ -1,0 +1,236 @@
+/* about */
+.about {
+  background-image: url(/images/about_top-image.png);
+}
+
+.profile {
+  margin-bottom: 160px;
+}
+
+.profile figure {
+  width: 80%;
+}
+
+.profileProfarea {
+  width: 60%;
+  min-width: 630px;
+  position: relative;
+  margin: -30% 0 0 auto;
+  padding: 50px;
+  background-color: rgba(255, 255, 242, 0.6);
+  text-align: left;
+}
+
+.profileProfarea h2 {
+  font-size: 2.8rem;
+  color: #0a122a;
+}
+
+.profileProfarea p {
+  padding-bottom: 20px;
+}
+
+.profileProfarea p:last-child {
+  padding-bottom: 0;
+}
+
+.ruby {
+  font-size: 1.6rem;
+}
+
+.profileProfarea table {
+  margin-bottom: 20px;
+}
+
+.profileProfarea table th {
+  width: 140px;
+  padding-right: 20px;
+}
+
+.profileProfarea table td {
+  padding-bottom: 16px;
+}
+
+.profileProfarea table td:last-child {
+  padding-bottom: 0;
+}
+
+.message {
+  flex-wrap: nowrap;
+  text-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+  margin-bottom: 80px;
+}
+
+.messageTextarea {
+  flex: 1;
+  z-index: 10;
+  text-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+}
+
+.messageTextarea h2 {
+  font-size: 2.4rem;
+}
+
+.messageTextarea p {
+  padding: 40px 0;
+  line-height: 3;
+}
+
+.messageTextareaLastmessage {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.message figure {
+  width: 73%;
+  margin-left: -20%;
+}
+
+.pieces {
+  text-align: center;
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.hoverAct {
+  position: relative;
+  margin-top: 80px;
+}
+
+.piecesHoverText {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.piecesHoverText ul {
+  text-align: left;
+  margin: 0 auto;
+  padding: 5%;
+}
+
+.piecesHoverText ul li {
+  list-style: circle;
+  padding-bottom: 10px;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 242, 0.8);
+  text-shadow: 1px 1px 1px #000;
+}
+
+.piecesHoverText ul li:last-child {
+  padding-bottom: 0;
+}
+
+.hoverAct:hover .piecesHoverText {
+  opacity: 1;
+}
+
+@media (max-width: 520px) {
+  .about {
+    background-image: url(/images/about_top-image_mobile.png);
+  }
+
+  .profile {
+    margin-bottom: 100px;
+  }
+
+  .profile figure {
+    width: 100%;
+  }
+
+  .profileProfarea {
+    width: 100%;
+    min-width: auto;
+    margin-top: -10%;
+    padding: 50px 25px;
+  }
+
+  .profileProfarea h4,
+  .ruby {
+    text-align: center;
+  }
+
+  .profileProfarea table {
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+
+  .profileProfarea table th,
+  .profileProfarea table td {
+    display: block;
+  }
+
+  .profileProfarea table td {
+    margin-bottom: 1em;
+  }
+
+  .message {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin-bottom: 100px;
+    overflow: hidden;
+  }
+
+  .messageTextarea {
+    width: calc(100% - 30px);
+    margin: 0 auto;
+  }
+
+  .messageTextarea h2 {
+    font-size: 2rem;
+    line-height: 2;
+  }
+
+  .messageTextareaText {
+    width: calc(100% - 30px);
+    padding: 20px 0 10px;
+    line-height: 3;
+    font-size: 1.3rem;
+  }
+
+  p.messageTextareaLastmessage {
+    font-size: 1.6rem;
+    line-height: 2.5;
+    padding-top: 0;
+  }
+
+  .message figure {
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    right: -45%;
+    z-index: -10;
+  }
+
+  .message figure img {
+    max-width: none;
+    width: 200%;
+    object-position: -230px 0;
+  }
+
+  .pieces {
+    margin-bottom: 0px;
+  }
+
+  .hoverAct {
+    margin-top: 50px;
+  }
+
+  .piecesHoverText {
+    position: inherit;
+    background: none;
+    opacity: 1;
+  }
+
+  .piecesHoverText ul li {
+    color: #333;
+    text-shadow: none;
+  }
+}

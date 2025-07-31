@@ -1,0 +1,90 @@
+// src/App.tsx
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Home from './pages/Home';
+import Service from './pages/Service';
+import { useEffect } from 'react';
+import About from './pages/About';
+import Works from './pages/Works';
+import Detail from './pages/Detail';
+import PostList from './admin/pages/PostList';
+import Layout from './components/Layout';
+import AdminLayout from './components/AdminLayout';
+import Login from './admin/pages/Login';
+import PrivateRoute from './components/PrivateRoute';
+import PostNew from './admin/pages/PostNew';
+
+import './icons/fontawesome';
+import PostEdit from './admin/pages/PostEdit';
+
+const BodyClassController = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const path = location.pathname;
+    const pathClass = path === '/' ? 'home' : path.slice(1).replace('/', '-');
+
+    document.body.className = '';
+    document.body.classList.add(pathClass);
+
+    if (path.startsWith('/admin')) {
+      document.body.classList.add('admin');
+    }
+
+    return () => {
+      document.body.className = '';
+    };
+  }, [location]);
+
+  return null;
+};
+
+const ScrollToHash = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const target = document.getElementById(location.hash.substring(1));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
+  return null;
+};
+
+const App = () => {
+  return (
+    <Router>
+      <BodyClassController />
+      <ScrollToHash />
+      <Routes>
+        {/* フロントページ（共通レイアウト） */}
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/service" element={<Service title="SERVICE" />} />
+          <Route path="/about" element={<About title="ABOUT" />} />
+          <Route path="/works" element={<Works title="WORKS"/>} />
+          <Route path="/works/:slug" element={<Detail />} />
+        </Route>
+
+        <Route path="/admin/login" element={<Login />} />
+
+        {/* 管理画面 */}
+        <Route
+          element={
+            <PrivateRoute>
+              <AdminLayout />
+            </PrivateRoute>
+          }
+        >
+          <Route path="/admin/post" element={<PostList />} />
+          <Route path="/admin/post/new" element={<PostNew />} />
+          <Route path="/admin/post/edit/:slug" element={<PostEdit />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;

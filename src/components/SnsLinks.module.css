@@ -1,0 +1,76 @@
+.snsLinks {
+  padding: 80px 0;
+}
+
+.snsLinks h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.snsLinks p {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.btnArea {
+  gap: 50px;
+}
+
+.btnArea a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  z-index: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btnArea a:hover {
+  color: #fafafa;
+}
+
+.btnArea a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 5px;
+  -webkit-mask:
+    linear-gradient(#fafafa 0 0) content-box,
+    linear-gradient(#fafafa 0 0);
+  mask: linear-gradient(#fafafa 0 0) content-box,
+    linear-gradient(#fafafa 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  transition: all 0.3s;
+
+}
+
+.btnArea a:hover::before {
+  -webkit-mask: none;
+  mask: none;
+  border-radius: 5px;
+
+}
+
+.instagram::before {
+  background: linear-gradient(40deg, #FFD600, #FF7A00, #FF0069, #D300C5, #7638FA);
+}
+
+.instagram:hover::before {
+  background: linear-gradient(40deg, #FFD600, #FF7A00, #FF0069, #D300C5, #7638FA);
+}
+
+.gmail::before {
+  background: linear-gradient(220deg, #EA4335, #4285F4, #FBBC05, #34A853);
+}
+
+.gmail:hover::before {
+  background: #EA4335;
+}

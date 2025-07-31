@@ -1,0 +1,107 @@
+.postForm {
+  display: grid;
+  grid-template-columns: 1fr 30%;
+  gap: 20px;
+}
+
+.pageContents {
+  grid-column: 1;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.postForm label,
+.postForm p.label {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.3em;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.postForm input[type="text"],
+.postForm input[type="url"] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0.3em;
+  font-size: 1.6rem;
+  line-height: 2em;
+  border: 1px solid #ccc;
+}
+
+.postForm textarea {
+  width: 100%;
+  min-height: 200px;
+  margin-bottom: 30px;
+  padding: 1em;
+  font-size: 1.6rem;
+  resize: vertical;
+  border: 1px solid #ccc;
+}
+
+.pageData {
+  grid-column: 2;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.postForm input[type="file"] {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.postForm label.fileBtn {
+  width: fit-content;
+  padding: 0.5em 1em;
+  margin-bottom: 20px;
+  background-color: #007bbb;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.imgDelete button {
+  margin-left: 20px;
+}
+
+.imgArea {
+  position: relative;
+}
+
+.imgArea:not(:last-child) {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ccc;
+}
+
+.imgArea p {
+  margin-bottom: 0.3em;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.remove {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 0.3em 16px;
+}
+
+.remove svg {
+  vertical-align: middle;
+}
+
+.submit {
+  grid-column: span 2;
+  width: fit-content;
+  padding: 0.3em 24px;
+  border: 1px solid #007bff;
+  font-size: 1.8rem;
+  color: #007bff;
+  transition: all 0.3s ease-in-out;
+}
+
+.submit:hover {
+  background-color: #007bbb;
+  color: #fff;
+}

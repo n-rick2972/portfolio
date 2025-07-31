@@ -1,0 +1,125 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 80px;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+.hamburger {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.header h1 a {
+  font-size: 4.8rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 0.2rem;
+  background-color: #0a122a;
+  border-radius: 0.2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+}
+
+.hamburger span:nth-child(2) {
+  top: 1rem;
+}
+
+.hamburger span:nth-child(3) {
+  top: 2rem;
+}
+
+.headerNav {
+  display: block;
+  width: max-content;
+  height: 100vh;
+  padding: 0 80px;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  transition: ease-in-out 0.6s;
+  background-color: rgba(250, 250, 250, 0.8);
+  opacity: 0;
+  z-index: -1;
+}
+
+.headerNav ul {
+  margin-top: 8rem;
+}
+
+.headerNav ul li {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.headerNav ul li a {
+  color: #0a122a;
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+/* ハンバーガーメニュー表示 */
+.hamburger.active span:first-child {
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.hamburger.active :nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:last-child {
+  position: absolute;
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+.headerNav.active {
+  display: block;
+  right: 0;
+  opacity: 1;
+}
+
+@media (max-width: 765px) {
+  .header {
+    height: 50px;
+  }
+
+  .header h1 a {
+    font-size: 2.4rem;
+  }
+
+  .hamburger {
+    width: 30px;
+  }
+
+  .headerNav {
+    width: 100%;
+  }
+
+  .headerNav ul li {
+    margin-bottom: 30px;
+  }
+
+  .headerNav ul li a {
+    font-size: 2.4rem;
+  }
+
+}

@@ -1,0 +1,118 @@
+/* works */
+.works {
+  background-image: url(/images/works_top-image.png);
+}
+
+.worksCategory {
+  margin: 80px auto 40px;
+}
+
+.loading {
+  font-size: 1.6rem;
+}
+
+.worksCategory ul li {
+  display: inline-block;
+  padding-right: 40px;
+}
+
+.worksCategory ul li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  margin-top: -5px;
+  background-color: #0a122a;
+  transition: 0.6s;
+}
+
+.worksCategory ul li:hover::after {
+  width: 100%;
+}
+
+.worksCategory ul li:last-child {
+  padding-right: 0;
+}
+
+.worksList {
+  justify-content: flex-start;
+  gap: 40px;
+  margin-bottom: 160px;
+}
+
+.workItem {
+  width: 30%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform ease-out;
+  will-change: opacity, transform;
+}
+
+.fadeIn {
+  animation-name: fadeInUp;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.worksText {
+  justify-content: flex-start;
+  margin-top: 0.5em;
+}
+
+.worksText p {
+  display: inline;
+  padding-right: 10px;
+  font-size: 1.2rem;
+}
+
+.worksText p:last-child {
+  padding: 0;
+  margin-left: auto;
+}
+
+.worksText p:last-child::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 1px;
+  margin-top: -3px;
+  background-color: #007bbb;
+  transition: 0.6s;
+}
+
+.hoverChange:hover p:last-child {
+  color: #007bbb;
+}
+
+.hoverChange:hover p:last-child::after {
+  width: 100%;
+}
+
+@media (max-width: 520px) {
+  .works {
+    background-image: url(/images/works_top-image_mobile.png);
+    background-position-x: -30px;
+  }
+
+  .worksCategory {
+    margin-top: 50px;
+  }
+
+  .worksList {
+    display: block;
+    margin-bottom: 100px;
+  }
+
+  .workItem {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}

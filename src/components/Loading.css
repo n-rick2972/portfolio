@@ -1,0 +1,66 @@
+/* loading */
+#loading,
+.particles {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fdfdfd;
+  z-index: 99999;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+#loading.loaded {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.textContainer {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 0;
+  text-align: center;
+  z-index: 1;
+}
+
+#Text {
+  text-align: center;
+  font-size: 4.8rem;
+  position: relative;
+}
+
+#particles>.particle {
+  opacity: 0;
+  position: absolute;
+  background-color: rgba(33, 150, 243, 0.5);
+  animation: bubbles 2s ease-in infinite;
+  border-radius: 100%;
+  z-index: 0;
+}
+
+@keyframes bubbles {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+    transform: translate(0, -20%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, -1000%);
+  }
+}
+
+@media (max-width: 520px) {
+  #bubble {
+    font-size: 3.2rem;
+  }
+}

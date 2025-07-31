@@ -1,0 +1,19 @@
+.header {
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 20px 40px;
+  border-bottom: 1px solid #333;
+}
+
+.header h1 {
+  font-size: 3.2rem;
+}
+
+.logoutBtn {
+  margin-left: 2em;
+  padding: 0.3em 24px;
+  background-color: #007bbb;
+  border-radius: 3em;
+  color: #fafafa;
+  font-size: 1.8rem;
+}

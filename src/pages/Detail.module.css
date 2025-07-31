@@ -1,0 +1,66 @@
+/* single */
+.detail {
+  background-image: url(/images/works_top-image.png);
+}
+
+.contentsArea {
+  text-align: left;
+  gap: 80px;
+}
+
+
+.textArea {
+  width: 50%;
+}
+
+.categories {
+  justify-content: flex-start;
+}
+
+.categories li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.url {
+  text-decoration: underline;
+  position: relative;
+}
+
+.url:after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 5px;
+  background-image: url(/images/ExternalLink.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: text-top;
+}
+
+.client,
+.commentary {
+  padding-top: 20px;
+}
+
+.pageNation {
+  width: 100%;
+  margin: 80px auto 0;
+  gap: 10%;
+}
+
+@media (max-width: 520px) {
+
+  .contentsArea {
+    gap: 50px;
+  }
+
+  .textArea {
+    width: 100%;
+  }
+
+  .pageNation {
+    margin-top: 50px;
+  }
+}

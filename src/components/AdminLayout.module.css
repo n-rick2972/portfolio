@@ -1,0 +1,7 @@
+.adminMain {
+  width: calc(100% - 30px);
+  margin: 0 auto;
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+}
