@@ -16,7 +16,7 @@ import PostEdit from './admin/pages/PostEdit';
 
 import './icons/fontawesome';
 
-import usePageViews from './hooks/usePageViews'; // 正しいケースで
+import usePageViews from './hooks/usePageViews';
 import CookieConsent from './components/CookieConsent';
 import { loadGtag } from './lib/analytics';
 
@@ -73,7 +73,7 @@ const ScrollToHash: React.FC = () => {
 };
 
 const InnerApp: React.FC = () => {
-  usePageViews(); // ← ここなら Router の内側なので safe
+  usePageViews();
 
   const handleAccept = () => {
     loadGtag();
