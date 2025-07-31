@@ -34,7 +34,7 @@ const Header: React.FC = () => {
         <li><a href="/about">ABOUT</a></li>
         <li><a href="/service">SERVICE</a></li>
         <li><a href="/works">WORKS</a></li>
-        <li><a href="/#contact">CONTACT</a></li>
+        <li><a href="#contact">CONTACT</a></li>
       </ul>
     </nav>
   </header>
