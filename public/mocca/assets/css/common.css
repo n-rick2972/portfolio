@@ -1,0 +1,179 @@
+@charset "UTF-8";
+/* CSS Document */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 16px * 62.5% = 10px */
+    width: 100%;
+    min-width: 1000px;
+    box-sizing: border-box;
+}
+
+body {
+    color: #293329;
+    background-image: url(../img/flower_back.png);
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: lighten;
+    background-size: cover;
+    font-family: 'Quicksand','Zen Maru Gothic', sans-serif;
+    font-size: 1.6em;
+    letter-spacing: 0;
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: left;
+    width: 100%;
+}
+
+h1 {
+    font-size: 4.8rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 6.0rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+h5 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+a {
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #424b55;
+}
+
+ul li {
+    list-style: none;
+}
+
+.wrapper {
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.mobile {
+    display: none;
+}
+
+
+._br {
+    display: none;
+}
+
+._br.m-none {
+    display: inline-block;
+}
+
+@media(min-width: 1000px){
+    a[href^="tel:"]{
+        pointer-events: none;
+    }
+}
+
+@media(max-width: 520px){
+    html {
+        min-width: 375px;
+    }
+
+    body {
+        min-width: inherit;
+        background-size: 150%;
+        background-position: top;
+        background-repeat: repeat-y;
+    }
+    
+    h1 {
+        font-size: 3.8rem;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: 3.0rem;
+        font-weight: 700;
+    }
+
+    h3 {
+        font-size: 2.0rem;
+        font-weight: 700;
+    }
+
+    h4 {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+    h5 {
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+
+    a {
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-decoration: none;
+        color: #424b55;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    .wrapper {
+        width: 94%;
+        min-width: 315px;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .mobile {
+        display: block;
+    }
+    
+    .pc {
+        display: none;
+    }
+
+    ._br {
+        display: inline-block;
+    }
+    
+    ._br.m-none {
+        display: none;
+    }
+}

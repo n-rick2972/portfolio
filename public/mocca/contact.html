@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | フラワーショップ　木花（もっか） | 兵庫県姫路市白浜町の花屋</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="フラワーショップ木花(もっか）は、兵庫県姫路市白浜町にあるお花屋さんです。日常使いの一輪から贈答用などのビジネスシーンまで、生活のさまざまなシーンで彩りと癒しを与えるお手伝いをしています。大切な人のハレの日にぜひご利用ください。こだわりのアレンジメントや早朝配達など、幅広いご要望にもお応えいたします。">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap');
+    </style>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/common.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <meta rel="apple-touch-icon" href="assets/img/logo.png">
+    <meta rel="shortcut-icon" href="assets/img/logo.png">
+    <meta property="og-url" content="https://example.com/">
+    <meta property="og:title" content="Contact | フラワーショップ　木花（もっか） | 兵庫県姫路市白浜町の花屋">
+    <meta property="og:site_name" content="Contact | フラワーショップ　木花（もっか） | 兵庫県姫路市白浜町の花屋">
+    <meta property="type" content="website">
+    <meta property="og:locale" content="ja-JP">
+    <meta property="og:image" content="assets/img/logo.png">
+    <meta property="og:description" content="フラワーショップ木花(もっか）は、兵庫県姫路市白浜町にあるお花屋さんです。こだわりのアレンジメントや早朝配達など、幅広いご要望にもお応えいたします。">
+</head>
+
+<body>
+    <header class="fixed">
+        <div class="flex header-w wrapper">
+            <a href="index.html">
+                <h1><img src="assets/img/logo.png" alt="ロゴ"></h1>
+            </a>
+            <nav class="flex header__nav">
+                <ul class="flex">
+                    <a href="about.html">
+                        <li>About</li>
+                    </a>
+                    <a href="gallery.html">
+                        <li>Gallery</li>
+                    </a>
+                    <a href="news.html">
+                        <li>News</li>
+                    </a>
+                    <a href="#">
+                        <li>Contact</li>
+                    </a>
+                </ul>
+                <div class="flex header-contact">
+                    <a href="tel:+81-079-245-5875">
+                        <div class="flex calling">
+                            <img src="assets/img/calling_black.png" alt="電話アイコン">
+                            <p class="pc">079-245-4875</p>
+                        </div>
+                    </a>
+                    <img class="line-icon" src="assets/img/line_black.png" alt="LINEアイコン">
+                </div>
+            </nav>
+            <div　id="hamburger" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <p>MENU</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="section__top">
+            <img src="assets/img/contact_top.jpg" alt="アイキャッチ画像">
+            <div class="top__title">
+                <h2>Contact</h2>
+            </div>
+        </section>
+        <section class="section__contact wrapper">
+            <p class="contact__lead">お花に関するご質問・ご相談がございましたら、お気軽にご相談ください。<br>下記問い合わせフォームのほか、お電話、LINEからでもお問い合わせいただけます。</p>
+            <form>
+                <p>※すべてご入力ください。</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th><label for="name">お名前</label></th>
+                            <td><input id="name" type="text" name="name" placeholder="お名前" required></td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">ご連絡方法</th>
+                            <td>
+                                <label for="contactmethod_mail">
+                                    <input id="contactmethod_mail" class="radio" type="radio" name="contactmethod" value="mail" onclick="contactChange1();" checked="checked">メール</label>
+                                <label for="contactmethod_tel">
+                                    <input id="contactmethod_tel" class="radio" type="radio" name="contactmethod" value="tel" onclick="contactChange1();">電話</label>
+                            </td>
+                        </tr>
+                        <!-- 表示非表示切り替え -->
+
+                        <tr id="firstBox">
+                            <td class="flex"><label for="email">メールアドレス</label><input id="email" type="email" name="email" required></td>
+
+                        </tr>
+                        <!-- 表示非表示切り替え -->
+
+                        <tr id="secondBox">
+                            <td class="flex"><label for="tel" required>電話番号</label><input id="tel" type="text" name="tel" /></td>
+
+                        </tr>
+                        <tr>
+                            <th><label for="textarea">お問い合わせ内容</label></th>
+                            <td><textarea id="textarea" class="textbox" type="textarea" name="message" placeholder="お問い合わせの内容をお書き下さい" required></textarea></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="button"><input class="submit" type="submit" value="送信する"></p>
+            </form>
+        </section>
+        <section class="section__contact-banner">
+            <div class="contact-banner__wrapper">
+                <ul class="flex wrapper contact-banner__contact-list">
+                    <li class="contact-banner__contact-item phone">
+                        <h4>お電話でのお問い合わせ</h4>
+                        <a href="tel:+81-079-245-5875">
+                            <p class="phone-number">079-245-4875</p>
+                        </a>
+                        <table class="reception">
+                            <tbody>
+                                <tr>
+                                    <th rowspan="2">受付時間</th>
+                                    <td>月〜土</td>
+                                    <td>9:00〜18:00</td>
+                                </tr>
+                                <tr>
+                                    <td>日・祝</td>
+                                    <td>9:00〜12:00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li class="contact-banner__contact-item line-qr">
+                        <h4>LINE公式＠お友だち募集中‼︎</h4>
+                        <a href="#"><img src="assets/img/line_qr.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer__wrapper wrapper">
+            <div class="flex footer__logowrapper__moble">
+                <a href="index.html"><img class="footer__logo" src="assets/img/logo_white.png" alt="ロゴ"></a>
+                <div class="flex footer__contacts pc">
+                    <a href="tel:+81-079-245-5875">
+                        <div class="flex calling">
+                            <img src="assets/img/calling_white.png" alt="電話アイコン">
+                            <p class="pc">079-245-4875</p>
+                        </div>
+                    </a>
+                    <img class="line-icon" src="assets/img/line_white.png" alt="LINEアイコン">
+                </div>
+            </div>
+            <div class="flex footer__nav__wrapper">
+                <nav>
+                    <ul class="flex">
+                        <a href="about.html">
+                            <li>About</li>
+                        </a>
+                        <a href="gallery.html">
+                            <li>Gallery</li>
+                        </a>
+                        <a href="news.html">
+                            <li>News</li>
+                        </a>
+                        <a href="contact.html">
+                            <li>Contact</li>
+                        </a>
+                    </ul>
+                </nav>
+                <div class="flex footer__contacts mobile">
+                    <a href="tel:+81-079-245-5875">
+                        <div class="flex calling">
+                            <img src="assets/img/calling_white.png" alt="電話アイコン">
+                            <p class="pc">079-245-4875</p>
+                        </div>
+                    </a>
+                    <img class="line-icon" src="assets/img/line_white.png" alt="LINEアイコン">
+                </div>
+            </div>
+            <p class="copy"><small>Copyright Flowershop Mocca All Right Reserved.</small></p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function contactChange1() {
+            let radio = document.getElementsByName('contactmethod');
+            if(radio[0].checked) {
+                document.getElementById('firstBox').style.display = "";
+                document.getElementById('secondBox').style.display = "none";
+            }else if(radio[1].checked) {
+                document.getElementById('firstBox').style.display = "none";
+                document.getElementById('secondBox').style.display = "";
+
+            }
+        }
+        window.onload = contactChange1;
+    </script>
+</body>

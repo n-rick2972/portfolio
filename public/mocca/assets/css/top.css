@@ -1,0 +1,263 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    background-color: rgba(255, 255, 255, 0.1);
+    background-image: url(../img/main-visual.jpg);
+    background-blend-mode: lighten;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    min-width: 1220px;
+    height: 100vh;
+    position: relative;
+    color: #fdfdfd;
+    overflow: hidden;
+}
+
+header {
+    width: 100vw;
+    min-width: 1220px;
+    height: 80px;
+    background-color: rgba(112, 132, 31, 0.8);
+}
+
+#slide_down {
+    display: none;
+    position: absolute;
+    top: -80px;
+    opacity: 0;
+    transition: 3s;
+}
+
+.header__news span {
+    display: inline-block;
+    width: 20px;
+    height: 18px;
+    border-right: solid #fdfdfd 2px;
+    margin-right: 20px;
+}
+
+.header__news a {
+    color: #fdfdfd;
+}
+
+.calling {
+    height: 40px;
+    padding: 8px 18px;
+    border: solid #fdfdfd 1px;
+    border-radius: 30px;
+}
+
+.calling img {
+    height: 100%;
+    margin-right: 5px;
+}
+
+.calling p {
+    font-size: 1.4rem;
+    color: #fdfdfd;
+}
+
+.line-icon {
+    width: 46px;
+    margin-left: 40px;
+}
+
+.main__title {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 200px;
+    background-color: rgba(255, 153, 187, 0.8);
+    border-radius: 0 40px 40px 0;
+    padding-left: calc((100% - 1000px) / 2);
+    vertical-align: middle;
+    position: absolute;
+    top: 25%;
+    left: 0;
+}
+
+#slide_right {
+    display: none;
+    left: -50%;
+    opacity: 0;
+    transition: 3s;
+}
+
+h1 {
+    vertical-align: middle;
+    letter-spacing: 0.2em;
+}
+
+h1 span {
+    font-family: 'Pacifico', sans-serif;
+    font-size: 2.6rem;
+    letter-spacing: 0px;
+    padding-right: 10px;
+}
+
+footer {
+    width: 65%;
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+    height: 300px;
+    background-color: rgba(255, 162, 20, 0.8);
+    padding: 80px calc((100% - 1000px) / 2) 80px 80px;   
+    border-radius: 40px 0 0 40px;
+    text-align: center;
+}
+
+#slide_left {
+    display: none;
+    right: -65%;
+    opacity: 0;
+    transition: 3s;
+}
+
+footer p {
+    font-size: 2.4rem;
+}
+
+footer nav {
+    width: 100%;
+    margin-top: 53px;
+}
+
+li {
+    font-size: 2.8rem;
+    position: relative;
+    color: #fdfdfd;
+}
+
+li::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background-color: #fdfdfd;
+    border-radius: 1px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.copy {
+    position: absolute;
+    top: 50%;
+    right: -165px;
+    transform: rotate(-90deg);
+}
+
+@media(max-width: 520px) {
+    body {
+        min-width: inherit;
+    }
+    
+    header {
+        min-width: inherit;
+        height: 50px;
+    }
+    
+    .header__news {
+        display: block;
+    }
+    
+    .header__news span {
+        display: none;
+    }
+    
+    .calling {
+        height: 32px;
+        padding: 4px;
+        border-radius: 10px;
+    }
+    
+    .calling img {
+        height: 100%;
+        margin-right: 0;
+    }
+    
+    .line-icon {
+        width: 32px;
+        margin-left: 16px;
+    }
+    
+    .main__title {
+        width: 70%;
+        height: 100px;
+        border-radius: 0 20px 20px 0;
+        padding-left: calc((100% - 345px) / 2);
+    }
+    
+    h1 {
+        vertical-align: middle;
+        letter-spacing: 0.2em;
+    }
+
+    h1 span {
+        font-size: 2.0rem;
+    }
+    
+    footer {
+        width: 100%;
+        bottom: 0;
+        height: 200px;
+        background-color: rgba(255, 162, 20, 0.8);
+        padding: 40px 15px;   
+        border-radius: 20px 20px 0 0;
+    }
+
+    footer p {
+        font-size: 1.8rem;
+    }
+
+    footer nav {
+        margin-top: 40px;
+    }
+    
+    li {
+        font-size: 1.8rem;
+    }
+
+    li::after {
+        width: 20px;
+        height: 2px;
+        bottom: -5px;
+    }
+    
+    .copy {
+        right: -100px;
+    }
+    
+    .copy p {
+        font-size: 1.0rem;
+    }
+}
+
+/* ローディングアニメーション */
+
+#splash {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background:#fdfdfd;
+    text-align:center;
+    color: #293329;
+}
+
+/* Loadingバー中央配置　*/
+#splash_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    color: #293329;
+}

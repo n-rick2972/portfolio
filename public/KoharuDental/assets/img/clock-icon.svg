@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+<defs>
+  <style>
+  .b{fill:none;stroke:#f8a9c4;stroke-linecap:round;}</style>
+</defs>
+<path class="b" d="m14.5,7.5c0,3.8659935-3.1340065,7-7,7S.5,11.3659935.5,7.5,3.634007.5,7.5.5s7,3.134007,7,7Z"/>
+<path class="b" d="m7.5,3.3v4.1999998l2.7999992,1.3999996"/>
+</svg>
