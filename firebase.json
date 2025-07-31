@@ -9,24 +9,25 @@
   },
   "hosting": {
     "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "cleanUrls": true,
+    "redirects": [
+      { "source": "/coeur",         "destination": "/coeur/",         "type": 301 },
+      { "source": "/GuildHarry",    "destination": "/GuildHarry/",    "type": 301 },
+      { "source": "/KoharuDental",  "destination": "/KoharuDental/",  "type": 301 },
+      { "source": "/mocca",         "destination": "/mocca/",         "type": 301 },
+      { "source": "/Wing-create",   "destination": "/Wing-create/",   "type": 301 },
+      { "source": "/yama",          "destination": "/yama/",          "type": 301 }
     ],
     "rewrites": [
       { "source": "/sitemap.xml",      "function": "sitemap" },
-
       { "source": "/coeur/**",         "destination": "/coeur/index.html" },
       { "source": "/GuildHarry/**",    "destination": "/GuildHarry/index.html" },
       { "source": "/KoharuDental/**",  "destination": "/KoharuDental/index.html" },
       { "source": "/mocca/**",         "destination": "/mocca/index.html" },
       { "source": "/Wing-create/**",   "destination": "/Wing-create/index.html" },
       { "source": "/yama/**",          "destination": "/yama/index.html" },
-
       { "source": "**",                "destination": "/index.html" }
-    ],
-    "cleanUrls": true
+    ]
   },
   "functions": [
     {
