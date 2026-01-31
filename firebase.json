@@ -23,6 +23,7 @@
       { "source": "/mocca/**",         "destination": "/mocca/index.html" },
       { "source": "/Wing-create/**",   "destination": "/Wing-create/index.html" },
       { "source": "/yama/**",          "destination": "/yama/index.html" },
+      { "source": "/presentation/**",          "destination": "/presentation/index.html" },
 
       { "source": "**",                "destination": "/index.html" }
     ],
