@@ -13,8 +13,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/presentation/assets/style.css" />
-
+  <link rel="stylesheet" href="./assets/style.css" />
 </head>
 
 <body>
@@ -23,38 +22,29 @@
     <!-- =========================
       Slide 01
     ========================== -->
-    <section class="slide slide--intro js-slide" data-slide="1">
-
-      <!-- Background Patterns -->
+    <section id="slide-01" class="slide slide--intro js-slide" data-slide="1">
       <div class="slide__bg-pattern"></div>
 
-      <!-- Decorative Elements -->
       <div class="deco-circle deco-circle--top-left"></div>
       <div class="deco-circle deco-circle--bottom-right"></div>
       <div class="deco-ring deco-ring--right"></div>
       <div class="deco-ring deco-ring--left"></div>
 
-      <!-- Top Border Line -->
       <div class="slide__topbar"></div>
 
-      <!-- Main Content -->
       <div class="slide__content">
-        <!-- Catchphrase Area -->
         <div class="hero">
           <div class="hero__kickers">
             <p class="hero__kicker">作るだけで終わらせない、顧客とともに成長する</p>
           </div>
 
           <h1 class="hero__title">
-            <!-- <span class="hero__icon"><i class="fas fa-chart-line"></i></span> -->
             Web戦略パートナー
           </h1>
         </div>
 
-        <!-- Divider -->
         <div class="divider"></div>
 
-        <!-- Profile Area -->
         <div class="profile-card">
           <p class="profile-card__brand">Azur Web Design</p>
           <p class="profile-card__name">大槻 夏海</p>
@@ -66,326 +56,212 @@
         </div>
       </div>
 
-      <!-- Footer Decorative Icon -->
-      <div class="slide__footer">Portfolio &amp; Introduction</div>
+      <div class="slide__footer">Business Plan Presentation</div>
     </section>
 
     <!-- =========================
-      Slide 02
+      Slide 02 : Why
     ========================== -->
-    <section class="slide slide--problem js-slide" data-slide="2">
-      <!-- Top Border -->
+    <section id="slide-02" class="slide slide--problem js-slide" data-slide="2">
       <div class="slide__topbar"></div>
-
-      <!-- Background -->
       <div class="slide__bg-pattern"></div>
 
-      <!-- Decorative Circle -->
-      <div class="deco-circle deco-circle--problem"></div>
+      <div class="gs-split">
+        <div class="gs-divider"></div>
 
-      <!-- Main Layout -->
-      <div class="problem-layout">
-        <!-- Left Column -->
-        <div class="problem-side">
-          <div class="problem-side__accent"></div>
-
-          <div class="problem-side__label">Problem</div>
-
-          <h2 class="problem-side__title">
-            こんな<span class="text-accent">お悩み</span><br />
-            ありませんか？
+        <div class="gs-pane gs-pane--light">
+          <p class="gs-kicker">OUR MISSION</p>
+          <h2 class="gs-headline">
+            Web制作を、<br>
+            <span>「コスト」</span>で<br>
+            終わらせないために。
           </h2>
-
-          <div class="problem-side__icon">
-            <i class="fas fa-question"></i>
-          </div>
+          <p class="gs-lead">
+            Webサイトは本来、<br>
+            <span class="gs-highlight js-action">事業を成長させるための道具</span>です。
+          </p>
         </div>
 
-        <!-- Right Column -->
-        <div class="problem-main">
-          <!-- Problem List -->
-          <div class="problem-list">
-            <div class="problem-item js-action">
-              <div class="problem-item__icon">
-                <i class="fas fa-chart-bar"></i>
-              </div>
-              <p class="problem-item__text">
-                ホームページを作ったけど、
-                <span class="problem-item__highlight">成果が出ない</span>
-              </p>
-            </div>
+        <div class="gs-pane gs-pane--muted">
+          <h3 class="gs-subtitle">しかし現実は…</h3>
 
-            <div class="problem-item js-action">
-              <div class="problem-item__icon">
-                <i class="fas fa-pen-fancy"></i>
-              </div>
-              <p class="problem-item__text">
-                何を載せればいいのか
-                <span class="problem-item__highlight">わからない</span>
-              </p>
-            </div>
-
-            <div class="problem-item js-action">
-              <div class="problem-item__icon">
-                <i class="fas fa-history"></i>
-              </div>
-              <p class="problem-item__text">
-                更新できず、
-                <span class="problem-item__highlight">放置状態</span>
-                になっている
-              </p>
-            </div>
-
-            <div class="problem-item js-action">
-              <div class="problem-item__icon">
-                <i class="fas fa-sitemap"></i>
-              </div>
-              <p class="problem-item__text">
-                WebやSNS、何から手をつければいいか
-                <span class="problem-item__highlight">わからない</span>
-              </p>
-            </div>
+          <div class="gs-card js-action">
+            <h4 class="gs-card__title">とりあえず作った</h4>
+            <p class="gs-card__desc">目的やターゲットが曖昧</p>
           </div>
 
-          <!-- Key Message -->
-          <div class="problem-message js-action">
-            <div class="problem-message__icon">
-              <i class="fas fa-exclamation-circle"></i>
-            </div>
-            <p class="problem-message__text">
-              「作ること」自体が<br />
-              <span class="problem-message__accent">目的</span>
-              になっていませんか？
-            </p>
+          <div class="gs-card js-action">
+            <h4 class="gs-card__title">作ったまま放置</h4>
+            <p class="gs-card__desc">更新されず情報が古い</p>
+          </div>
+
+          <div class="gs-card js-action">
+            <h4 class="gs-card__title">どう使えばいいの？</h4>
+            <p class="gs-card__desc">本業が忙しいから、手が回らない</p>
+          </div>
+
+          <div class="gs-callout js-action">
+            <p>そんな<strong>「もったいない」</strong>サイトが多い</p>
           </div>
         </div>
       </div>
 
-      <!-- Page Number -->
       <div class="slide__page-number">02</div>
     </section>
 
     <!-- =========================
-      Slide 03
+      Slide 03 : Target
     ========================== -->
-    <section class="slide slide--policy js-slide" data-slide="3">
-      <!-- Top Border -->
+    <section id="slide-03" class="slide slide--policy js-slide" data-slide="3">
       <div class="slide__topbar"></div>
-
-      <!-- Background -->
       <div class="slide__bg-pattern"></div>
 
-      <!-- Decorative Circle -->
-      <div class="deco-circle deco-circle--policy"></div>
-
-      <!-- Main Layout -->
-      <div class="policy-layout">
-        <!-- Left Column -->
-        <div class="policy-side">
-          <div class="policy-side__accent"></div>
-
-          <div class="policy-side__label">Policy</div>
-
-          <h2 class="policy-side__title">
-            私が<br />
-            <span class="text-accent">大切に</span><br />
-            していること
+      <div class="gs-center stance-layout--combined">
+        <div class="stance-side">
+          <p class="gs-kicker">TARGET</p>
+          <h2 class="gs-center__headline gs-center__headline--value">
+            <span class="text-accent">こんな方のため</span>Web制作です
           </h2>
+        </div>
 
-          <div class="policy-side__icon">
-            <i class="fas fa-heart"></i>
+        <div class="gs-split gs-split--target">
+          <!-- Left: Target -->
+          <div class="gs-pane gs-pane--light">
+            <div class="top-line"></div>
+            <h3 class="gs-subtitle">ターゲット</h3>
+
+            <ul class="gs-target-tags">
+              <li class="gs-tag js-action">
+                <i class="fas fa-rocket"></i>
+                <p>創業期〜小規模事業者の方<br><span>これから事業を拡大していきたい</span></p>
+              </li>
+              <li class="gs-tag js-action">
+                <i class="fas fa-store"></i>
+                <p>Webをどう使えばいいかわからない<br><span>本業が忙しく手探りの状態</span></p>
+              </li>
+              <li class="gs-tag js-action">
+                <i class="fas fa-user-tie"></i>
+                <p>制作会社に丸投げになっている<br><span>言われた通りに作っただけ</span></p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: Issues -->
+          <div class="gs-pane gs-pane--muted">
+            <h3 class="gs-subtitle">こんなお悩みありませんか？</h3>
+
+            <ul class="gs-target-tags">
+              <li class="gs-card">
+                <div class="gs-ico"><i class="fas fa-bullseye"></i></div>
+                <div>
+                  <h4 class="gs-card__title"><span class="gs-highlight">目的がぼんやり</span></h4>
+                  <p class="gs-card__desc">「とりあえずあればいい」で作ってしまった...</p>
+                </div>
+              </li>
+
+              <li class="gs-card">
+                <div class="gs-ico"><i class="fas fa-check-double"></i></div>
+                <div>
+                  <h4 class="gs-card__title"><span class="gs-highlight">更新できず放置</span></h4>
+                  <p class="gs-card__desc">完成したことに満足して、活用されていない...</p>
+                </div>
+              </li>
+
+              <li class="gs-card">
+                <div class="gs-ico"><i class="fas fa-cogs"></i></div>
+                <div>
+                  <h4 class="gs-card__title"><span class="gs-highlight">運用できない</span></h4>
+                  <p class="gs-card__desc">更新方法が難しくて、放置されている...</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- Right Column -->
-        <div class="policy-main">
-          <!-- Policy List -->
-          <div class="policy-list">
-            <div class="policy-item js-action">
-              <div class="policy-item__icon">
-                <i class="fas fa-handshake"></i>
-              </div>
-              <p class="policy-item__text">
-                「作る前」から
-                <span class="policy-item__highlight">一緒に考える</span>
-              </p>
-            </div>
-
-            <div class="policy-item js-action">
-              <div class="policy-item__icon">
-                <i class="fas fa-clipboard-check"></i>
-              </div>
-              <p class="policy-item__text">
-                事業について
-                <span class="policy-item__highlight">一番伝わる広告戦略</span>
-                は何か
-              </p>
-            </div>
-
-            <div class="policy-item js-action">
-              <div class="policy-item__icon">
-                <i class="fas fa-bullseye"></i>
-              </div>
-              <p class="policy-item__text">
-                誰に、何を、どう
-                <span class="policy-item__highlight">伝えるのか</span>
-              </p>
-            </div>
-
-            <div class="policy-item js-action">
-              <div class="policy-item__icon">
-                <i class="fas fa-sync-alt"></i>
-              </div>
-              <p class="policy-item__text">
-                公開した後も
-                <span class="policy-item__highlight">“使い続けられる”</span>
-                設計になっているか
-              </p>
-            </div>
-          </div>
-
-          <!-- Key Message -->
-          <div class="policy-message">
-            <div class="policy-message__icon">
-              <i class="fas fa-cogs"></i>
-            </div>
-            <p class="policy-message__text">
-              Webサイトを“読み物”ではなく<br />
-              事業の
-              <span class="policy-message__accent js-action">“広告ツール”</span>
-              として考えます
-            </p>
-          </div>
+        <div class="gs-callout gs-callout--target js-action">
+          <p>だから最初に<strong>「誰に、何を、どう届けるか」</strong>を一緒に考えます</p>
         </div>
       </div>
 
-      <!-- Page Number -->
       <div class="slide__page-number">03</div>
     </section>
 
     <!-- =========================
-      Slide 04
+      Slide 04 : Value (How we work)
     ========================== -->
-    <section class="slide slide--strength js-slide" data-slide="4">
-      <!-- Top Border -->
+    <section id="slide-04" class="slide slide--value js-slide" data-slide="4">
+      <div class="slide__bg-pattern"></div>
       <div class="slide__topbar"></div>
 
-      <!-- Background -->
-      <div class="slide__bg-pattern"></div>
+      <div class="gs-center gs-center--value">
+        <p class="gs-kicker">HOW WE WORK</p>
 
-      <!-- Decorative Circles -->
-      <div class="deco-circle deco-circle--strength-left"></div>
-      <div class="deco-circle deco-circle--strength-right"></div>
+        <h2 class="gs-center__headline gs-center__headline--value">
+          「作ること」より、<span class="gs-highlight action">使われ続けること</span>を重視
+        </h2>
 
-      <!-- Header -->
-      <header class="strength-header">
-        <div class="strength-header__left">
-          <span class="strength-header__label">Strength</span>
-          <h2 class="strength-header__title">
-            私の<span class="text-accent">強み</span>
-          </h2>
-        </div>
-        <div class="strength-header__right">
-          Features &amp; Advantages
-        </div>
-      </header>
-
-      <!-- Main -->
-      <div class="strength-body">
-        <!-- Grid -->
-        <div class="strength-grid">
-          <div class="strength-card js-action">
-            <div class="strength-card__icon">
-              <i class="fas fa-comments"></i>
-            </div>
-            <div class="strength-card__content">
-              <p class="strength-card__label">PLANNING</p>
-              <p class="strength-card__text">
-                丁寧なヒアリング<br />
-                <span>×</span> Web戦略視点の企画力
-              </p>
+        <div class="gs-grid4">
+          <div class="gs-card gs-card--value gs-grid4--value js-action">
+            <div class="gs-card__row">
+              <div class="gs-ico"><i class="fas fa-comments"></i></div>
+              <div>
+                <h3 class="gs-card__title">丁寧なヒアリングから企画</h3>
+                <p class="gs-card__desc">お客様の事業内容や目標を深く理解し、ただ作るだけでなく「何を伝えるべきか」から一緒に考えます。</p>
+              </div>
             </div>
           </div>
 
-          <div class="strength-card js-action">
-            <div class="strength-card__icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <div class="strength-card__content">
-              <p class="strength-card__label">CODING</p>
-              <p class="strength-card__text">
-                内部SEOを意識した<br />
-                設計・コーディング
-              </p>
+          <div class="gs-card gs-card--value gs-grid4--value js-action">
+            <div class="gs-card__row">
+              <div class="gs-ico"><i class="fas fa-paint-brush"></i></div>
+              <div>
+                <h3 class="gs-card__title">想いや世界観を大切にしたデザイン</h3>
+                <p class="gs-card__desc">機能性だけでなく、ブランドの個性や空気感が伝わる、心に響くデザインをご提案します。</p>
+              </div>
             </div>
           </div>
 
-          <div class="strength-card js-action">
-            <div class="strength-card__icon">
-              <i class="fab fa-wordpress"></i>
-            </div>
-            <div class="strength-card__content">
-              <p class="strength-card__label">CMS</p>
-              <p class="strength-card__text">
-                運用を見越した<br />
-                CMS(WordPress)構築
-              </p>
+          <div class="gs-card gs-card--value gs-grid4--value js-action">
+            <div class="gs-card__row">
+              <div class="gs-ico"><i class="fas fa-sync-alt"></i></div>
+              <div>
+                <h3 class="gs-card__title">運用しやすい構造・更新設計</h3>
+                <p class="gs-card__desc">専門知識がなくても更新できるWordPress構築など、日々の運用負荷を減らす設計を行います。</p>
+              </div>
             </div>
           </div>
 
-          <div class="strength-card js-action">
-            <div class="strength-card__icon">
-              <i class="fas fa-hand-holding-dollar"></i>
-            </div>
-            <div class="strength-card__content">
-              <p class="strength-card__label">SUPPORT</p>
-              <p class="strength-card__text">
-                補助金制度も含めた<br />
-                現実的なご提案
-              </p>
+          <div class="gs-card gs-card--value gs-grid4--value js-action">
+            <div class="gs-card__row">
+              <div class="gs-ico"><i class="fas fa-seedling"></i></div>
+              <div>
+                <h3 class="gs-card__title">公開後も育てていける設計</h3>
+                <p class="gs-card__desc">マニュアル作成やレクチャー、運用サポートで「育てるWebサイト」を提供します。</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Key Message -->
-        <div class="strength-goal">
-          <div class="strength-goal__bg-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <div class="strength-goal__bg-right"></div>
-          <div class="strength-goal__badge">
-            <i class="fas fa-trophy"></i>
-          </div>
-          <div class="strength-goal__content">
-            <p class="strength-goal__label">GOAL</p>
-            <p class="strength-goal__text js-action">
-              公開後も
-              <span>成果を出し続ける</span>
-              Webサイトづくり
-            </p>
-          </div>
+        <div class="gs-callout gs-callout4 gs-callout--value js-action">
+          <p>
+            最終的には<strong> お客様が自走できる </strong>状態を作ります
+          </p>
         </div>
       </div>
 
-      <!-- Page Number -->
       <div class="slide__page-number">04</div>
     </section>
 
     <!-- =========================
-      Slide 05
+      Slide 05 : Services (Value)
     ========================== -->
-    <section class="slide slide--services js-slide" data-slide="5">
-      <!-- Top Border -->
+    <section id="slide-05" class="slide slide--services js-slide" data-slide="5">
       <div class="slide__topbar"></div>
+      <div class="slide__bg-pattern"></div>
 
-      <!-- Background Pattern -->
-      <div class="slide__dot-pattern"></div>
-
-      <!-- Decorative Circles -->
       <div class="deco-circle deco-circle--services-left"></div>
       <div class="deco-circle deco-circle--services-right"></div>
 
-      <!-- Header -->
       <header class="services-header">
         <div class="services-header__left">
           <span class="services-header__label">Services</span>
@@ -393,65 +269,51 @@
             対応<span class="text-accent">できること</span>
           </h2>
         </div>
-        <div class="services-header__right">
-          Service Menu
-        </div>
       </header>
 
-      <!-- Main -->
       <div class="services-body">
-        <!-- Grid -->
-        <div class="services-grid">
-          <div class="services-card js-action">
+        <ul class="services-grid">
+          <li class="services-card js-action">
             <div class="services-card__icon">
               <i class="fas fa-desktop"></i>
             </div>
             <div class="services-card__content">
               <p class="services-card__label">WEB PRODUCTION</p>
-              <p class="services-card__text">
-                Webサイト / ECサイト制作
-              </p>
+              <p class="services-card__text">Webサイト / ECサイト制作</p>
             </div>
-          </div>
+          </li>
 
-          <div class="services-card js-action">
+          <li class="services-card js-action">
             <div class="services-card__icon">
               <i class="fab fa-wordpress"></i>
             </div>
             <div class="services-card__content">
               <p class="services-card__label">CMS</p>
-              <p class="services-card__text">
-                CMS(WordPress)構築・カスタマイズ
-              </p>
+              <p class="services-card__text">CMS(WordPress)構築・カスタマイズ</p>
             </div>
-          </div>
+          </li>
 
-          <div class="services-card js-action">
+          <li class="services-card js-action">
             <div class="services-card__icon">
               <i class="fas fa-pen-nib"></i>
             </div>
             <div class="services-card__content">
               <p class="services-card__label">GRAPHIC DESIGN</p>
-              <p class="services-card__text">
-                ロゴ・名刺・チラシ制作
-              </p>
+              <p class="services-card__text">ロゴ・名刺・チラシ制作</p>
             </div>
-          </div>
+          </li>
 
-          <div class="services-card js-action">
+          <li class="services-card js-action">
             <div class="services-card__icon">
               <i class="fas fa-images"></i>
             </div>
             <div class="services-card__content">
               <p class="services-card__label">CREATIVE</p>
-              <p class="services-card__text">
-                SNS・LINE・広告用バナー制作
-              </p>
+              <p class="services-card__text">SNS・LINE・広告用バナー制作</p>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
 
-        <!-- Key Message -->
         <div class="services-onestop">
           <div class="services-onestop__bg-icon">
             <i class="fas fa-comments"></i>
@@ -462,309 +324,205 @@
           <div class="services-onestop__content">
             <p class="services-onestop__label">ONE STOP</p>
             <p class="services-onestop__text js-action">
-              窓口を分けず、
-              <span>まとめて相談</span>
-              できます
+              窓口を分けず、<span>まとめて相談</span> できます
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Page Number -->
       <div class="slide__page-number">05</div>
     </section>
 
     <!-- =========================
-      Slide 06
+      Slide 06 : Work Style & Roadmap
     ========================== -->
-    <section class="slide slide--stance js-slide" data-slide="6">
-      <!-- Top Border -->
+    <section id="slide-06" class="slide slide--stance js-slide" data-slide="6">
+      <div class="slide__bg-pattern"></div>
       <div class="slide__topbar"></div>
 
-      <!-- Background -->
-      <div class="slide__bg-pattern"></div>
-
-      <!-- Decorative Circle -->
       <div class="deco-circle deco-circle--stance"></div>
 
-      <!-- Main Layout -->
-      <div class="stance-layout">
-        <!-- Left Column -->
+      <div class="gs-center stance-layout--combined">
         <div class="stance-side">
-          <div class="stance-side__accent"></div>
+          <p class="gs-kicker">Work Style & Roadmap</p>
 
-          <div class="stance-side__label">Work Style</div>
-
-          <h2 class="stance-side__title">
-            仕事の<br />
-            <span class="text-accent">進め方</span><br />
-            スタンス
+          <h2 class="gs-center__headline gs-center__headline--value">
+            仕事の<span class="text-accent">スタンス</span>と展望
           </h2>
+        </div>
 
-          <div class="stance-side__icon">
-            <i class="fas fa-briefcase"></i>
+        <div class="stance-main stance-main--split">
+          <div class="stance-block">
+            <div class="stance-block__head">
+              <div class="stance-block__badge">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3 class="stance-block__title">仕事のスタンス</h3>
+            </div>
+
+            <ul class="stance-list">
+              <li class="stance-item js-action">
+                <div class="stance-item__icon">
+                  <i class="fas fa-clipboard-check"></i>
+                </div>
+                <p class="stance-item__text">
+                  丁寧・着実・<span class="stance-item__highlight">約束を守る</span>
+                </p>
+              </li>
+
+              <li class="stance-item js-action">
+                <div class="stance-item__icon">
+                  <i class="fas fa-ruler-combined"></i>
+                </div>
+                <p class="stance-item__text">
+                  <span class="stance-item__highlight">ルールや仕組みづくり</span>が得意
+                </p>
+              </li>
+
+              <li class="stance-item js-action">
+                <div class="stance-item__icon">
+                  <i class="fas fa-seedling"></i>
+                </div>
+                <p class="stance-item__text">
+                  クライアント様に寄り添い、<span class="stance-item__highlight">ともに成長する</span>
+                </p>
+              </li>
+
+              <li class="stance-item js-action">
+                <div class="stance-item__icon">
+                  <i class="fas fa-infinity"></i>
+                </div>
+                <p class="stance-item__text">
+                  <span class="stance-item__highlight">長く続く関係性</span>を大切に
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="stance-block stance-block--roadmap">
+            <div class="stance-block__head">
+              <div class="stance-block__badge">
+                <i class="fas fa-route"></i>
+              </div>
+              <h3 class="stance-block__title">今後の展望</h3>
+            </div>
+
+            <ul class="roadmap">
+              <li class="roadmap-card">
+                <div class="roadmap-card__head">
+                  <div class="roadmap-card__icon">
+                    <i class="fas fa-hourglass-half"></i>
+                  </div>
+                  <p class="roadmap-card__title">短期</p>
+                </div>
+                <ul class="roadmap-list">
+                  <li class="js-action">
+                    <i class="fas fa-check"></i>
+                    <p><span class="stance-item__highlight">直接受注の比率を上げる</span></p>
+                  </li>
+                  <li class="js-action">
+                    <i class="fas fa-check"></i>
+                    <p>公開できる<span class="stance-item__highlight">実績づくり</span></p>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="roadmap-card">
+                <div class="roadmap-card__head">
+                  <div class="roadmap-card__icon">
+                    <i class="fas fa-mountain"></i>
+                  </div>
+                  <p class="roadmap-card__title">中長期</p>
+                </div>
+                <ul class="roadmap-list">
+                  <li class="js-action">
+                    <i class="fas fa-check"></i>
+                    <p>創業期・小規模事業者の<span class="stance-item__highlight">「Webの相談窓口」</span>になる</p>
+                  </li>
+                  <li class="js-action">
+                    <i class="fas fa-check"></i>
+                    <p>Webを軸に事業成長を<span class="stance-item__highlight">一緒に考えるパートナー</span>になる</p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- Right Column -->
-        <div class="stance-main">
-          <!-- Stance List -->
-          <div class="stance-list">
-            <div class="stance-item js-action">
-              <div class="stance-item__icon">
-                <i class="fas fa-clipboard-check"></i>
-              </div>
-              <p class="stance-item__text">
-                性格タイプ：
-                <span class="stance-item__highlight">コントローラー</span>
-              </p>
-            </div>
-
-            <div class="stance-item js-action">
-              <div class="stance-item__icon">
-                <i class="fas fa-handshake"></i>
-              </div>
-              <p class="stance-item__text">
-                丁寧・着実・
-                <span class="stance-item__highlight">約束を守る</span>
-              </p>
-            </div>
-
-            <div class="stance-item js-action">
-              <div class="stance-item__icon">
-                <i class="fas fa-ruler-combined"></i>
-              </div>
-              <p class="stance-item__text">
-                <span class="stance-item__highlight">ルールや仕組みづくり</span>
-                が得意
-              </p>
-            </div>
-
-            <div class="stance-item js-action">
-              <div class="stance-item__icon">
-                <i class="fas fa-infinity"></i>
-              </div>
-              <p class="stance-item__text">
-                <span class="stance-item__highlight">長く続く関係性</span>
-                を大切に
-              </p>
-            </div>
+        <div class="stance-message stance-message--mini">
+          <div class="stance-message__icon">
+            <i class="fas fa-flag-checkered"></i>
           </div>
-
-          <!-- Key Message -->
-          <div class="stance-message">
-            <div class="stance-message__icon">
-              <i class="fas fa-seedling"></i>
-            </div>
-            <p class="stance-message__text">
-              一度作って終わりではなく、<br />
-              <span class="stance-message__accent js-action">一緒に育てていく</span>
-              関係を目指します
+          <div class="stance-message__content">
+            <p class="services-onestop__label">GOAL</p>
+            <p class="stance-message__text js-action">
+              “制作して終わり”ではなく、<span class="stance-message__accent">「育てるWeb戦略」</span>を目指します
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Page Number -->
       <div class="slide__page-number">06</div>
     </section>
 
     <!-- =========================
-      Slide 07
+      Slide 07 : Closing
     ========================== -->
-    <section class="slide slide--future js-slide" data-slide="7">
-      <!-- Top Border -->
+    <section id="slide-07" class="slide slide--vision js-slide" data-slide="7">
       <div class="slide__topbar"></div>
-
-      <!-- Background -->
       <div class="slide__bg-pattern"></div>
 
-      <!-- Header -->
-      <header class="future-header">
-        <div class="future-header__left">
-          <span class="future-header__label">Challenges &amp; Future</span>
-          <h2 class="future-header__title">
-            正直な<span class="future-header__muted">課題</span>と、
-            <span class="text-accent">これから</span>
-          </h2>
-        </div>
-        <div class="future-header__right">
-          Transparency &amp; Commitment
-        </div>
-      </header>
-
-      <!-- Main -->
-      <div class="future-body">
-        <!-- Center Arrow -->
-        <div class="future-arrow">
-          <i class="fas fa-arrow-right"></i>
-        </div>
-
-        <!-- Left : Challenges -->
-        <div class="future-card future-card--challenge">
-          <div class="future-card__bg-icon">
-            <i class="fas fa-clipboard-list"></i>
-          </div>
-
-          <div class="future-card__content">
-            <div class="future-card__head future-card__head--challenge">
-              <div class="future-card__head-icon">
-                <i class="fas fa-exclamation"></i>
-              </div>
-              <h3>正直な課題</h3>
-            </div>
-
-            <ul class="future-list">
-              <li class="future-list__item">
-                <i class="fas fa-circle"></i>
-                <span>公開できる実績はまだ多くありません</span>
-              </li>
-              <li class="future-list__item">
-                <i class="fas fa-circle"></i>
-                <span>特定業種に特化した知識はありません</span>
-              </li>
-              <li class="future-list__item">
-                <i class="fas fa-circle"></i>
-                <span>業界経験年数は3年目</span>
-              </li>
-            </ul>
-
-            <p class="future-note">
-              初心を忘れず、一つひとつの案件に全力で向き合います。
-            </p>
-          </div>
-        </div>
-
-        <!-- Right : Value -->
-        <div class="future-card future-card--value">
-          <div class="future-card__topline"></div>
-
-          <div class="future-card__bg-icon">
-            <i class="fas fa-hand-holding-heart"></i>
-          </div>
-
-          <div class="future-card__content">
-            <div class="future-card__head future-card__head--value">
-              <div class="future-card__head-icon">
-                <i class="fas fa-star"></i>
-              </div>
-              <h3>その代わりに</h3>
-            </div>
-
-            <ul class="future-value-list">
-              <li class="future-value-item">
-                <i class="fas fa-check-circle"></i>
-                <div>
-                  <p class="future-value-item__title">
-                    創業塾で学んだ経営・集客・財務の基礎
-                  </p>
-                  <p class="future-value-item__desc">
-                    ビジネス視点でWeb戦略を提案できます
-                  </p>
-                </div>
-              </li>
-
-              <li class="future-value-item">
-                <i class="fas fa-check-circle"></i>
-                <div>
-                  <p class="future-value-item__title">
-                    特定業種にこだわらず、幅広く作ってきた実体験
-                  </p>
-                  <p class="future-value-item__desc">
-                    これまでの経験に基づいてノウハウを共有
-                  </p>
-                </div>
-              </li>
-
-              <li class="future-value-item">
-                <i class="fas fa-check-circle"></i>
-                <div>
-                  <p class="future-value-item__title">
-                    伴走型で支援する姿勢
-                  </p>
-                  <p class="future-value-item__desc">
-                    下請けや外注先ではなくパートナーとして
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Page Number -->
-      <div class="slide__page-number">07</div>
-    </section>
-
-    <!-- =========================
-      Slide 08
-    ========================== -->
-    <section class="slide slide--vision js-slide" data-slide="8">
-      <!-- Top Border -->
-      <div class="slide__topbar"></div>
-
-      <!-- Background -->
-      <div class="slide__bg-pattern"></div>
-
-      <!-- Decorative Circles -->
       <div class="deco-circle deco-circle--vision-lg"></div>
       <div class="deco-circle deco-circle--vision-sm"></div>
 
-      <!-- Header -->
       <header class="vision-header">
         <div class="vision-header__left">
-          <span class="vision-header__label">Vision &amp; Future</span>
+          <span class="vision-header__label">Message</span>
           <h2 class="vision-header__title">
-            これからの<span class="text-accent">ビジョン</span>
+            最後に<span class="text-accent">伝えたいこと</span>
           </h2>
-        </div>
-        <div class="vision-header__right">
-          Partnership &amp; Growth
         </div>
       </header>
 
-      <!-- Main -->
       <div class="vision-body">
-        <!-- Vision Cards -->
         <div class="vision-grid">
+          <div class="vision-card js-action">
+            <div class="vision-card__topline"></div>
+            <div class="vision-card__icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3 class="vision-card__title">Webはスタート</h3>
+            <p class="vision-card__text">
+              作った瞬間がゴールではなく<br />
+              <span>公開してからが本当の始まり</span>
+            </p>
+          </div>
+
           <div class="vision-card js-action">
             <div class="vision-card__topline"></div>
             <div class="vision-card__icon">
               <i class="fas fa-handshake"></i>
             </div>
-            <h3 class="vision-card__title">パートナーシップ</h3>
+            <h3 class="vision-card__title">伴走する支援</h3>
             <p class="vision-card__text">
-              下請けではなく<br />
-              <span>直接つながるパートナーへ</span>
+              “制作屋”ではなく<br />
+              <span>長く付き合えるパートナー</span>
             </p>
           </div>
 
           <div class="vision-card js-action">
             <div class="vision-card__topline"></div>
             <div class="vision-card__icon">
-              <i class="fas fa-flag"></i>
+              <i class="fas fa-compass"></i>
             </div>
-            <h3 class="vision-card__title">創業支援</h3>
+            <h3 class="vision-card__title">まず整理から</h3>
             <p class="vision-card__text">
-              創業期・小規模事業者の<br />
-              <span>伴走支援</span>
-            </p>
-          </div>
-
-          <div class="vision-card js-action">
-            <div class="vision-card__topline"></div>
-            <div class="vision-card__icon">
-              <i class="fas fa-seedling"></i>
-            </div>
-            <h3 class="vision-card__title">Web活用</h3>
-            <p class="vision-card__text">
-              Webサイトを「作るもの」から<br />
-              <span>「育てるもの」へ</span>
+              「誰に何をどう届ける？」を<br />
+              <span>一緒に言語化</span>
             </p>
           </div>
         </div>
 
-        <!-- CTA -->
         <div class="vision-cta">
           <div class="vision-cta__bg">
             <i class="fas fa-comments"></i>
@@ -787,8 +545,7 @@
         </div>
       </div>
 
-      <!-- Page Number -->
-      <div class="slide__page-number slide__page-number--light">08</div>
+      <div class="slide__page-number slide__page-number--light">07</div>
     </section>
 
   </main>
@@ -801,8 +558,7 @@
 
   <div class="deck-hint">← / → / Space で操作</div>
 
-  <script src="/presentation/assets/slide.js"></script>
-
+  <script src="./assets/slide.js"></script>
 </body>
 
 </html>
