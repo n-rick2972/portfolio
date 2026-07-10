@@ -1,26 +1,24 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import {
-  doc,
-  updateDoc,
   collection,
-  query,
-  where,
-  serverTimestamp,
+  doc,
   getDocs,
+  query,
+  serverTimestamp,
+  updateDoc,
+  where,
 } from 'firebase/firestore';
+
 import { db } from '../../Firebase/Firebase';
+import type { FormData } from '../../types';
 
 import PostForm from '../components/PostForm';
-import type { FormData } from '../../types';
-import adminStyles from './Admin.module.css';
-
 import { updateImagesInStorage } from '../utils/updateImagesInStorage';
 
-const PostEdit = () => {
-  const { slug } = useParams();
-  const navigate = useNavigate();
-  const defaultFormData: FormData = {
+import adminStyles from './Admin.module.css';
+
+const defaultFormData: FormData = {
   title: '',
   slug: '',
   client: '',
@@ -29,96 +27,188 @@ const PostEdit = () => {
   description: '',
   categories: [],
   images: [],
-  publicIds: []
+  publicIds: [],
 };
-  const [formData, setFormData] = useState<FormData>(defaultFormData);
-  const [docId, setDocId] = useState<string>('');
+
+const PostEdit = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+
+  const [formData, setFormData] =
+    useState<FormData>(defaultFormData);
+
+  const [docId, setDocId] = useState('');
+  const [originalImages, setOriginalImages] =
+    useState<string[]>([]);
+  const [originalPublicIds, setOriginalPublicIds] =
+    useState<string[]>([]);
+
+  const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [originalImages, setOriginalImages] = useState<(string | File)[]>([]);
 
-  // 編集対象の投稿を取得
   useEffect(() => {
+    if (!slug) {
+      navigate('/admin/post', { replace: true });
+      return;
+    }
+
     const fetchData = async () => {
-  // slugからdocIdを検索
-  const slugQuery = query(
-    collection(db, 'works'),
-    where('slug', '==', slug)
-  );
-  const querySnapshot = await getDocs(slugQuery);
+      try {
+        const slugQuery = query(
+          collection(db, 'works'),
+          where('slug', '==', slug)
+        );
 
-  if (querySnapshot.empty) {
-    console.warn('指定された投稿が見つかりません');
-    navigate('/admin/post');
-    return;
-  }
+        const querySnapshot = await getDocs(slugQuery);
 
-  const docSnap = querySnapshot.docs[0];
-  const data = docSnap.data() as FormData;
+        if (querySnapshot.empty) {
+          alert('指定された投稿が見つかりません。');
+          navigate('/admin/post', { replace: true });
+          return;
+        }
 
-  setFormData(data);
-  setOriginalImages(data.images.filter((img): img is string | File => img !== undefined));
-  setDocId(docSnap.id);
-};
+        const document = querySnapshot.docs[0];
+        const data = document.data();
 
-    if (slug) fetchData();
+        const images = Array.isArray(data.images)
+          ? (data.images as string[])
+          : [];
+
+        const publicIds = Array.isArray(data.publicIds)
+          ? (data.publicIds as string[])
+          : [];
+
+        setDocId(document.id);
+
+        setFormData({
+          title: data.title ?? '',
+          slug: data.slug ?? '',
+          client: data.client ?? '',
+          url: data.url ?? '',
+          url_text: data.url_text ?? '',
+          description: data.description ?? '',
+          categories: Array.isArray(data.categories)
+            ? data.categories
+            : [],
+          images,
+          publicIds,
+        });
+
+        setOriginalImages(images);
+        setOriginalPublicIds(publicIds);
+      } catch (error) {
+        console.error('投稿データ取得エラー:', error);
+        alert('投稿データの取得に失敗しました。');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
   }, [slug, navigate]);
 
-  // 入力変更時
-  const handleChange = <K extends keyof FormData>(field: K, value: FormData[K]) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+  const handleChange = <K extends keyof FormData>(
+    field: K,
+    value: FormData[K]
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
   };
 
-  // 画像削除時
   const handleRemoveImage = (index: number) => {
-    const updated = [...formData.images];
-    updated[index] = undefined;
-    handleChange('images', updated);
+    setFormData((prev) => ({
+      ...prev,
+      images: prev.images.filter(
+        (_, imageIndex) => imageIndex !== index
+      ),
+    }));
   };
 
+  const isSlugDuplicated = async (
+    targetSlug: string
+  ): Promise<boolean> => {
+    const slugQuery = query(
+      collection(db, 'works'),
+      where('slug', '==', targetSlug)
+    );
 
-  // 登録処理
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const querySnapshot = await getDocs(slugQuery);
+
+    return querySnapshot.docs.some(
+      (document) => document.id !== docId
+    );
+  };
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
+
+    if (!docId || isSubmitting) return;
+
     setIsSubmitting(true);
 
     try {
-      // スラッグの一意性チェック
-      if (formData.slug !== slug) {
-        const slugQuery = query(collection(db, 'works'), where('slug', '==', formData.slug));
-        const querySnapshot = await getDocs(slugQuery);
-        if (!querySnapshot.empty) {
-          alert('このスラッグはすでに使用されています。別のスラッグを入力してください。');
-          setIsSubmitting(false);
-          return;
-        }
+      const normalizedSlug = formData.slug.trim();
+
+      if (!normalizedSlug) {
+        alert('スラッグを入力してください。');
+        return;
       }
 
-      // File → URL に変換する処理（アップロード）
-      const cleanedImages = formData.images.filter((img): img is string | File => img !== undefined);
-      const onlyUrls = originalImages.filter((img): img is string => typeof img === 'string');
+      const duplicated =
+        await isSlugDuplicated(normalizedSlug);
 
-      const { updatedImages, publicIds, } = await updateImagesInStorage(cleanedImages, onlyUrls);
+      if (duplicated) {
+        alert(
+          'このスラッグはすでに使用されています。'
+        );
+        return;
+      }
 
-      const updatedData = {
-        ...formData,
-        images: updatedImages,publicIds,
+      const { updatedImages, publicIds } =
+        await updateImagesInStorage(
+          formData.images,
+          originalImages,
+          originalPublicIds,
+          docId
+        );
+
+      await updateDoc(doc(db, 'works', docId), {
+        title: formData.title.trim(),
+        slug: normalizedSlug,
+        client: formData.client.trim(),
+        url: formData.url.trim(),
+        url_text: formData.url_text.trim(),
+        description: formData.description,
+        categories: formData.categories,
+        images: updatedImages,
+        publicIds,
         updatedAt: serverTimestamp(),
-      };
+      });
 
-      await updateDoc(doc(db, 'works', docId), updatedData);
+      alert('更新が完了しました。');
       navigate('/admin/post');
     } catch (error) {
-      console.error('更新に失敗しました', error);
+      console.error('更新に失敗しました:', error);
+      alert('更新に失敗しました。');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-
+  if (isLoading) {
+    return <p>読み込み中...</p>;
+  }
 
   return (
     <>
-      <h2 className={adminStyles.heading}>投稿を編集</h2>
+      <h2 className={adminStyles.heading}>
+        投稿を編集
+      </h2>
+
       <PostForm
         formData={formData}
         onChange={handleChange}

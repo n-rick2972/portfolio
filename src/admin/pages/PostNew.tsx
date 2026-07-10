@@ -20,16 +20,16 @@ import PostForm from '../components/PostForm';
 const PostNew = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState<FormData>({
-  title: '',
-  slug: '',
-  client: '',
-  description: '',
-  url: '',
-  url_text: '',
-  categories: [],
-  images: [],
-  publicIds: []
-});
+    title: '',
+    slug: '',
+    client: '',
+    description: '',
+    url: '',
+    url_text: '',
+    categories: [],
+    images: [],
+    publicIds: []
+  });
 
   const [uploading, setUploading] = useState(false);
 
@@ -52,42 +52,45 @@ const PostNew = () => {
     setUploading(true);
 
     try {
-      // 🔸 連番取得
       const worksRef = collection(db, 'works');
       const q = query(worksRef, orderBy('id', 'desc'), limit(1));
       const snapshot = await getDocs(q);
 
       let newId = 1;
+
       if (!snapshot.empty) {
-        const maxId = parseInt(snapshot.docs[0].data().id, 10);
-        newId = maxId + 1;
+        const maxId = Number.parseInt(snapshot.docs[0].data().id, 10);
+
+        if (!Number.isNaN(maxId)) {
+          newId = maxId + 1;
+        }
       }
 
       const paddedId = String(newId).padStart(3, '0');
-      const generatedSlug = `works-${paddedId}`;
+      const generatedSlug = `works${paddedId}`;
 
-      // 🔸 スラッグを自動セット（上書き）
-      setFormData((prev) => ({
-        ...prev,
-        slug: generatedSlug,
-      }));
-
-      // 🔸画像アップロード
       const uploadedUrls: string[] = [];
       const publicIds: string[] = [];
 
       for (const file of formData.images) {
-        if (file instanceof File) {
-          const fileName = `${Date.now()}_${file.name}`;
-          const fileRef = ref(storage, fileName);
-          await uploadBytes(fileRef, file);
-          const url = await getDownloadURL(fileRef);
-          uploadedUrls.push(url);
-          publicIds.push(fileName);
-        }
+        if (!(file instanceof File)) continue;
+
+        const safeFileName = file.name
+          .trim()
+          .replace(/\s+/g, '-');
+
+        const fileName = `${crypto.randomUUID()}_${safeFileName}`;
+        const storagePath = `works/${paddedId}/${fileName}`;
+        const fileRef = ref(storage, storagePath);
+
+        await uploadBytes(fileRef, file);
+
+        const url = await getDownloadURL(fileRef);
+
+        uploadedUrls.push(url);
+        publicIds.push(storagePath);
       }
 
-      // 🔸ドキュメントに新しいidを使用
       await setDoc(doc(db, 'works', paddedId), {
         id: paddedId,
         slug: generatedSlug,
@@ -98,7 +101,7 @@ const PostNew = () => {
         url_text: formData.url_text,
         categories: formData.categories,
         images: uploadedUrls,
-        publicIds: publicIds,
+        publicIds,
       });
 
       alert('登録が完了しました');
@@ -124,7 +127,7 @@ const PostNew = () => {
       }
 
       const paddedId = String(newId).padStart(3, '0');
-      const generatedSlug = `works${paddedId}`;
+      const generatedSlug = `works-${paddedId}`;
 
       setFormData((prev) => ({
         ...prev,

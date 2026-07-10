@@ -1,43 +1,92 @@
-import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
+import {
+  deleteObject,
+  getDownloadURL,
+  ref,
+  uploadBytes,
+} from 'firebase/storage';
 import { storage } from '../../Firebase/Firebase';
 
-export const updateImagesInStorage = async (
-  newImages: (string | File)[],
-  oldUrls: string[]
-): Promise<{ updatedImages: string[]; publicIds: string[] }> => {
-  const uploadedUrls: string[] = [];
-  const publicIds: string[] = [];
-
-  for (const img of newImages) {
-    if (typeof img === 'string') {
-      uploadedUrls.push(img);
-      publicIds.push(extractFileName(img));
-    } else {
-      const fileName = `${Date.now()}_${img.name}`;
-      const fileRef = ref(storage, fileName);
-      await uploadBytes(fileRef, img);
-      const url = await getDownloadURL(fileRef);
-      uploadedUrls.push(url);
-      publicIds.push(fileName);
-    }
-  }
-
-  // 不要画像を削除（任意）
-  const unusedOldUrls = oldUrls.filter((url) => !uploadedUrls.includes(url));
-  for (const url of unusedOldUrls) {
-    try {
-      const decodedPath = decodeURIComponent(new URL(url).pathname.split('/o/')[1]);
-      const fileRef = ref(storage, decodedPath);
-      await deleteObject(fileRef);
-    } catch (e) {
-      console.warn('画像削除に失敗しました:', e);
-    }
-  }
-
-  return { updatedImages: uploadedUrls, publicIds };
+type UpdateImagesResult = {
+  updatedImages: string[];
+  publicIds: string[];
 };
 
-// 画像URLからファイル名を抽出（?alt=media など除去）
-const extractFileName = (url: string): string => {
-  return url.split('?')[0].split('/').pop() ?? '';
+export const updateImagesInStorage = async (
+  newImages: Array<string | File>,
+  oldImages: string[],
+  oldPublicIds: string[],
+  workId: string
+): Promise<UpdateImagesResult> => {
+  const updatedImages: string[] = [];
+  const updatedPublicIds: string[] = [];
+
+  for (const image of newImages) {
+    /*
+     * 既存画像
+     */
+    if (typeof image === 'string') {
+      const oldIndex = oldImages.indexOf(image);
+
+      if (oldIndex === -1) {
+        console.warn('既存画像に対応するStorageパスが見つかりません:', image);
+        continue;
+      }
+
+      const storagePath = oldPublicIds[oldIndex];
+
+      updatedImages.push(image);
+      updatedPublicIds.push(storagePath);
+      continue;
+    }
+
+    /*
+     * 新規画像
+     */
+    const safeFileName = image.name
+      .trim()
+      .replace(/\s+/g, '-');
+
+    const fileName = `${crypto.randomUUID()}_${safeFileName}`;
+    const storagePath = `works/${workId}/${fileName}`;
+    const imageRef = ref(storage, storagePath);
+
+    await uploadBytes(imageRef, image);
+
+    const downloadUrl = await getDownloadURL(imageRef);
+
+    updatedImages.push(downloadUrl);
+    updatedPublicIds.push(storagePath);
+  }
+
+  /*
+   * フォームから取り除かれた既存画像を削除
+   */
+  const removedPublicIds = oldImages
+    .map((url, index) => ({
+      url,
+      storagePath: oldPublicIds[index],
+    }))
+    .filter(({ url }) => !updatedImages.includes(url))
+    .map(({ storagePath }) => storagePath)
+    .filter((storagePath): storagePath is string => Boolean(storagePath));
+
+  const deleteResults = await Promise.allSettled(
+    removedPublicIds.map((storagePath) =>
+      deleteObject(ref(storage, storagePath))
+    )
+  );
+
+  deleteResults.forEach((result, index) => {
+    if (result.status === 'rejected') {
+      console.warn(
+        `旧画像の削除に失敗しました: ${removedPublicIds[index]}`,
+        result.reason
+      );
+    }
+  });
+
+  return {
+    updatedImages,
+    publicIds: updatedPublicIds,
+  };
 };

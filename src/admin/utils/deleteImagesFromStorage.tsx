@@ -1,15 +1,22 @@
-import { getStorage, ref, deleteObject } from 'firebase/storage';
+import { deleteObject, ref } from 'firebase/storage';
+import { storage } from '../../Firebase/Firebase';
 
-export const deleteImagesFromStorage = async (imagePaths: string[]) => {
-  const storage = getStorage();
+export const deleteImagesFromStorage = async (
+  storagePaths: string[]
+): Promise<void> => {
+  const results = await Promise.allSettled(
+    storagePaths.map((storagePath) => {
+      const imageRef = ref(storage, storagePath);
+      return deleteObject(imageRef);
+    })
+  );
 
-  const deletePromises = imagePaths.map((path) => {
-    const decodedPath = decodeURIComponent(new URL(path).pathname.replace(/^\/v0\/b\/[^/]+\/o\//, '').replace(/%2F/g, '/'));
-    const fileRef = ref(storage, decodedPath);
-    return deleteObject(fileRef).catch((error) => {
-      console.warn(`画像削除失敗: ${decodedPath}`, error);
-    });
+  results.forEach((result, index) => {
+    if (result.status === 'rejected') {
+      console.warn(
+        `画像削除に失敗しました: ${storagePaths[index]}`,
+        result.reason
+      );
+    }
   });
-
-  await Promise.all(deletePromises);
 };

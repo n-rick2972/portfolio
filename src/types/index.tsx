@@ -20,6 +20,6 @@ export type FormData = {
   url: string;
   url_text: string;
   categories: string[];
-  images: (string | File | undefined)[];
+  images: Array<string | File>;
   publicIds: string[];
 };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { collection, getDocs, query, orderBy,deleteDoc,doc } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../../Firebase/Firebase';
 import { deleteImagesFromStorage } from '../utils/deleteImagesFromStorage';
 import type { Work } from '../../types';
@@ -26,23 +26,22 @@ const PostList = () => {
     fetchWorks();
   }, []);
 
-  const handleDelete = async (id: string, images: (string | File)[]) => {
-    const confirmed = window.confirm('この投稿を本当に削除しますか？');
+  const handleDelete = async (work: Work) => {
+    const confirmed = window.confirm(
+      `「${work.title}」を削除しますか？\nこの操作は元に戻せません。`
+    );
+
     if (!confirmed) return;
 
     try {
-      // Firestore ドキュメント削除
-      await deleteDoc(doc(db, 'works', id));
+      await deleteImagesFromStorage(work.publicIds);
+      await deleteDoc(doc(db, 'works', work.id));
 
-      // Cloud Storage 画像削除（File型でないstringのみ）
-      const imagePaths = images.filter((img): img is string => typeof img === 'string');
-      await deleteImagesFromStorage(imagePaths);
+      setWorks((prev) => prev.filter((item) => item.id !== work.id));
 
-      // 表示から削除
-      setWorks((prev) => prev.filter((work) => work.id !== id));
       alert('削除しました');
     } catch (error) {
-      console.error('削除に失敗しました', error);
+      console.error('投稿削除エラー:', error);
       alert('削除に失敗しました');
     }
   };
@@ -57,8 +56,11 @@ const PostList = () => {
           <li key={work.id} className={adminStyles.listItem}>
             <p>{work.title}</p>
             <div className={adminStyles.actionBtn}>
-            <Link to={`/admin/post/edit/${work.slug}`}><FontAwesomeIcon icon={faPenToSquare} /> 編集</Link>
-            <button onClick={() => handleDelete(work.id, work.images)}><FontAwesomeIcon icon={faTrashCan} /> 削除</button>
+              <Link to={`/admin/post/edit/${work.slug}`}><FontAwesomeIcon icon={faPenToSquare} /> 編集</Link>
+              <button type="button" onClick={() => handleDelete(work)}>
+                <FontAwesomeIcon icon={faTrashCan} />
+                削除
+              </button>
             </div>
           </li>
         ))}
