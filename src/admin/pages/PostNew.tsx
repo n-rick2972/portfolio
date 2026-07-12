@@ -27,8 +27,8 @@ const PostNew = () => {
     url: '',
     url_text: '',
     categories: [],
-    images: [],
-    publicIds: []
+    images: [null, null, null, null, null],
+    publicIds: [null, null, null, null, null],
   });
 
   const [uploading, setUploading] = useState(false);
@@ -41,10 +41,15 @@ const PostNew = () => {
   };
 
   const handleRemoveImage = (index: number) => {
-    setFormData((prev) => ({
-      ...prev,
-      images: prev.images.filter((_, i) => i !== index),
-    }));
+    setFormData((prev) => {
+      const updatedImages = [...prev.images];
+      updatedImages[index] = null;
+
+      return {
+        ...prev,
+        images: updatedImages,
+      };
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {

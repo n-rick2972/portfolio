@@ -12,7 +12,7 @@ type UpdateImagesResult = {
 };
 
 export const updateImagesInStorage = async (
-  newImages: Array<string | File>,
+  newImages: Array<string | File | null>,
   oldImages: string[],
   oldPublicIds: string[],
   workId: string
@@ -21,42 +21,39 @@ export const updateImagesInStorage = async (
   const updatedPublicIds: string[] = [];
 
   for (const image of newImages) {
-    /*
-     * 既存画像
-     */
-    if (typeof image === 'string') {
-      const oldIndex = oldImages.indexOf(image);
+  if (!image) continue;
 
-      if (oldIndex === -1) {
-        console.warn('既存画像に対応するStorageパスが見つかりません:', image);
-        continue;
-      }
+  if (typeof image === 'string') {
+    const oldIndex = oldImages.indexOf(image);
 
-      const storagePath = oldPublicIds[oldIndex];
+    if (oldIndex === -1) continue;
 
-      updatedImages.push(image);
+    const storagePath = oldPublicIds[oldIndex];
+
+    updatedImages.push(image);
+
+    if (storagePath) {
       updatedPublicIds.push(storagePath);
-      continue;
     }
 
-    /*
-     * 新規画像
-     */
-    const safeFileName = image.name
-      .trim()
-      .replace(/\s+/g, '-');
-
-    const fileName = `${crypto.randomUUID()}_${safeFileName}`;
-    const storagePath = `works/${workId}/${fileName}`;
-    const imageRef = ref(storage, storagePath);
-
-    await uploadBytes(imageRef, image);
-
-    const downloadUrl = await getDownloadURL(imageRef);
-
-    updatedImages.push(downloadUrl);
-    updatedPublicIds.push(storagePath);
+    continue;
   }
+
+  const safeFileName = image.name
+    .trim()
+    .replace(/\s+/g, '-');
+
+  const fileName = `${crypto.randomUUID()}_${safeFileName}`;
+  const storagePath = `works/${workId}/${fileName}`;
+  const imageRef = ref(storage, storagePath);
+
+  await uploadBytes(imageRef, image);
+
+  const downloadUrl = await getDownloadURL(imageRef);
+
+  updatedImages.push(downloadUrl);
+  updatedPublicIds.push(storagePath);
+}
 
   /*
    * フォームから取り除かれた既存画像を削除

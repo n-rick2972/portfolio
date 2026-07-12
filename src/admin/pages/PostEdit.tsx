@@ -22,12 +22,12 @@ const defaultFormData: FormData = {
   title: '',
   slug: '',
   client: '',
+  description: '',
   url: '',
   url_text: '',
-  description: '',
   categories: [],
-  images: [],
-  publicIds: [],
+  images: [null, null, null, null, null],
+  publicIds: [null, null, null, null, null],
 };
 
 const PostEdit = () => {
@@ -78,7 +78,15 @@ const PostEdit = () => {
           ? (data.publicIds as string[])
           : [];
 
-        setDocId(document.id);
+        const imageSlots: Array<string | File | null> = [
+          ...images,
+          ...Array(Math.max(0, 5 - images.length)).fill(null),
+        ].slice(0, 5);
+
+        const publicIdSlots: Array<string | null> = [
+          ...publicIds,
+          ...Array(Math.max(0, 5 - publicIds.length)).fill(null),
+        ].slice(0, 5);
 
         setFormData({
           title: data.title ?? '',
@@ -90,12 +98,13 @@ const PostEdit = () => {
           categories: Array.isArray(data.categories)
             ? data.categories
             : [],
-          images,
-          publicIds,
+          images: imageSlots,
+          publicIds: publicIdSlots,
         });
 
         setOriginalImages(images);
         setOriginalPublicIds(publicIds);
+
       } catch (error) {
         console.error('投稿データ取得エラー:', error);
         alert('投稿データの取得に失敗しました。');
@@ -118,12 +127,15 @@ const PostEdit = () => {
   };
 
   const handleRemoveImage = (index: number) => {
-    setFormData((prev) => ({
-      ...prev,
-      images: prev.images.filter(
-        (_, imageIndex) => imageIndex !== index
-      ),
-    }));
+    setFormData((prev) => {
+      const updatedImages = [...prev.images];
+      updatedImages[index] = null;
+
+      return {
+        ...prev,
+        images: updatedImages,
+      };
+    });
   };
 
   const isSlugDuplicated = async (

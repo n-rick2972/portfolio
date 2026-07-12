@@ -114,9 +114,8 @@ const PostForm: React.FC<Props> = ({ formData, onChange, onSubmit, onRemoveImage
                 typeof file === 'string'
                   ? file
                   : file instanceof File
-                  ? URL.createObjectURL(file)
-                  : '';
-
+                    ? URL.createObjectURL(file)
+                    : '';
               return (
                 <li key={idx} className={postFormStyles.imgArea}>
                   <p>{idx === 0 ? 'サムネイル' : `画像 ${idx}`}</p>
@@ -128,11 +127,12 @@ const PostForm: React.FC<Props> = ({ formData, onChange, onSubmit, onRemoveImage
                     accept="image/*"
                     style={{ display: 'none' }}
                     onChange={(e) => {
-                      if (e.target.files && e.target.files[0]) {
-                        const updatedImages = [...formData.images];
-                        updatedImages[idx] = e.target.files[0];
-                        onChange('images', updatedImages);
-                      }
+                      const selectedFile = e.target.files?.[0];
+                      if (!selectedFile) return;
+                      const updatedImages = [...formData.images];
+                      updatedImages[idx] = selectedFile;
+                      onChange('images', updatedImages);
+                      e.target.value = '';
                     }}
                   />
                   <label htmlFor={`upload-${idx}`} className={postFormStyles.fileBtn}>
