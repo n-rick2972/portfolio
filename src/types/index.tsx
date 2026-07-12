@@ -1,4 +1,3 @@
-// src/types/index.ts
 export type Work = {
   id: string;
   title: string;
@@ -20,6 +19,6 @@ export type FormData = {
   url: string;
   url_text: string;
   categories: string[];
-  images: Array<string | File>;
-  publicIds: string[];
+  images: Array<string | File | null>;
+  publicIds: Array<string | null>;
 };

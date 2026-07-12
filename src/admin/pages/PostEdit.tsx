@@ -70,6 +70,8 @@ const PostEdit = () => {
         const document = querySnapshot.docs[0];
         const data = document.data();
 
+        setDocId(document.id);
+
         const images = Array.isArray(data.images)
           ? (data.images as string[])
           : [];

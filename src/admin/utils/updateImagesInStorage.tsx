@@ -21,9 +21,10 @@ export const updateImagesInStorage = async (
   const updatedPublicIds: string[] = [];
 
   for (const image of newImages) {
-  if (!image) continue;
+  if (image === null) continue;
 
   if (typeof image === 'string') {
+
     const oldIndex = oldImages.indexOf(image);
 
     if (oldIndex === -1) continue;
